@@ -2,26 +2,18 @@
   "configs": [
     {
       "ignores": [
-        "node_modules",
-        "**/node_modules/**",
-        ".pnp",
-        "**/.pnp/**",
-        ".pnp.js",
-        "**/.pnp.js/**",
-        ".env",
-        "**/.env/**",
-        ".env.local",
-        "**/.env.local/**",
-        ".env.development.local",
-        "**/.env.development.local/**",
-        ".env.test.local",
-        "**/.env.test.local/**",
-        ".env.production.local",
-        "**/.env.production.local/**",
-        ".turbo",
-        "**/.turbo/**",
-        ".vercel",
-        "**/.vercel/**",
+        "node_modules/",
+        "**/node_modules/**/",
+        ".pnp/",
+        "**/.pnp/**/",
+        ".pnp.*",
+        "**/.pnp.*/**",
+        ".env*",
+        "**/.env*/**",
+        ".turbo/",
+        "**/.turbo/**/",
+        ".vercel/",
+        "**/.vercel/**/",
         "npm-debug.log*",
         "**/npm-debug.log*/**",
         "yarn-debug.log*",
@@ -38,26 +30,30 @@
         "**/.next/**/",
         "out/",
         "**/out/**/",
-        "build",
-        "**/build/**",
-        "dist",
-        "**/dist/**",
-        ".eslint-config-inspector",
-        "**/.eslint-config-inspector/**",
+        "build/",
+        "**/build/**/",
+        "dist/",
+        "**/dist/**/",
+        ".eslint-config-inspector/",
+        "**/.eslint-config-inspector/**/",
         "honghong-me.db",
         "**/honghong-me.db/**",
         "honghong-me.db-shm",
         "**/honghong-me.db-shm/**",
         "honghong-me.db-wal",
         "**/honghong-me.db-wal/**",
-        ".mdx",
-        "**/.mdx/**",
+        ".mdx/",
+        "**/.mdx/**/",
         "playwright-report/",
         "**/playwright-report/**/",
         "test-results/",
         "**/test-results/**/",
         "coverage/",
-        "**/coverage/**/"
+        "**/coverage/**/",
+        "*.tsbuildinfo",
+        "**/*.tsbuildinfo/**",
+        "next-env.d.ts",
+        "**/next-env.d.ts/**"
       ],
       "index": 0
     },
@@ -1951,6 +1947,27 @@
         "@typescript-eslint/prefer-nullish-coalescing": "error",
         "@typescript-eslint/prefer-optional-chain": "error",
         "@typescript-eslint/prefer-string-starts-ends-with": "error",
+        "constructor-super": "off",
+        "getter-return": "off",
+        "no-const-assign": "off",
+        "no-dupe-args": "off",
+        "no-dupe-class-members": "off",
+        "no-dupe-keys": "off",
+        "no-func-assign": "off",
+        "no-import-assign": "off",
+        "no-new-symbol": "off",
+        "no-new-native-nonconstructor": "off",
+        "no-obj-calls": "off",
+        "no-redeclare": "off",
+        "no-setter-return": "off",
+        "no-this-before-super": "off",
+        "no-undef": "off",
+        "no-unreachable": "off",
+        "no-unsafe-negation": "off",
+        "no-var": "error",
+        "prefer-const": "error",
+        "prefer-rest-params": "error",
+        "prefer-spread": "error",
         "@typescript-eslint/no-invalid-this": "error",
         "@typescript-eslint/no-shadow": "error",
         "@typescript-eslint/consistent-type-imports": [
@@ -1964,6 +1981,212 @@
       "index": 10
     },
     {
+      "name": "tszhong0411:react",
+      "plugins": {
+        "@eslint-react": {},
+        "@eslint-react/dom": {},
+        "react-hooks": {},
+        "@eslint-react/hooks-extra": {},
+        "@eslint-react/naming-convention": {},
+        "jsx-a11y": {}
+      },
+      "files": [
+        "**/*.?([cm])js",
+        "**/*.?([cm])jsx",
+        "**/*.?([cm])ts",
+        "**/*.?([cm])tsx"
+      ],
+      "languageOptions": {
+        "parser": "typescript-eslint/parser",
+        "parserOptions": {
+          "ecmaFeatures": {
+            "jsx": true
+          },
+          "project": "./tsconfig.json",
+          "sourceType": "module"
+        }
+      },
+      "rules": {
+        "@eslint-react/ensure-forward-ref-using-ref": "warn",
+        "@eslint-react/no-access-state-in-setstate": "error",
+        "@eslint-react/no-array-index-key": "warn",
+        "@eslint-react/no-children-count": "warn",
+        "@eslint-react/no-children-for-each": "warn",
+        "@eslint-react/no-children-map": "warn",
+        "@eslint-react/no-children-only": "warn",
+        "@eslint-react/no-children-prop": "warn",
+        "@eslint-react/no-children-to-array": "warn",
+        "@eslint-react/no-clone-element": "warn",
+        "@eslint-react/no-comment-textnodes": "warn",
+        "@eslint-react/no-component-will-mount": "error",
+        "@eslint-react/no-component-will-receive-props": "error",
+        "@eslint-react/no-component-will-update": "error",
+        "@eslint-react/no-create-ref": "error",
+        "@eslint-react/no-direct-mutation-state": "error",
+        "@eslint-react/no-duplicate-key": "error",
+        "@eslint-react/no-missing-key": "error",
+        "@eslint-react/no-nested-components": "warn",
+        "@eslint-react/no-redundant-should-component-update": "error",
+        "@eslint-react/no-set-state-in-component-did-mount": "warn",
+        "@eslint-react/no-set-state-in-component-did-update": "warn",
+        "@eslint-react/no-set-state-in-component-will-update": "warn",
+        "@eslint-react/no-string-refs": "error",
+        "@eslint-react/no-unsafe-component-will-mount": "warn",
+        "@eslint-react/no-unsafe-component-will-receive-props": "warn",
+        "@eslint-react/no-unsafe-component-will-update": "warn",
+        "@eslint-react/no-unstable-context-value": "error",
+        "@eslint-react/no-unstable-default-props": "error",
+        "@eslint-react/no-unused-class-component-members": "warn",
+        "@eslint-react/no-unused-state": "warn",
+        "@eslint-react/no-useless-fragment": "warn",
+        "@eslint-react/prefer-destructuring-assignment": "warn",
+        "@eslint-react/prefer-shorthand-boolean": "warn",
+        "@eslint-react/prefer-shorthand-fragment": "warn",
+        "@eslint-react/dom/no-children-in-void-dom-elements": "warn",
+        "@eslint-react/dom/no-dangerously-set-innerhtml": "off",
+        "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
+        "@eslint-react/dom/no-find-dom-node": "error",
+        "@eslint-react/dom/no-missing-button-type": "warn",
+        "@eslint-react/dom/no-missing-iframe-sandbox": "warn",
+        "@eslint-react/dom/no-namespace": "error",
+        "@eslint-react/dom/no-render-return-value": "error",
+        "@eslint-react/dom/no-script-url": "warn",
+        "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
+        "@eslint-react/dom/no-unsafe-target-blank": "warn",
+        "@eslint-react/no-leaked-conditional-rendering": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "jsx-a11y/alt-text": [
+          "error",
+          {
+            "elements": [
+              "img"
+            ],
+            "img": [
+              "Image"
+            ]
+          }
+        ],
+        "jsx-a11y/anchor-has-content": "error",
+        "jsx-a11y/anchor-is-valid": "error",
+        "jsx-a11y/aria-activedescendant-has-tabindex": "error",
+        "jsx-a11y/aria-props": "error",
+        "jsx-a11y/aria-proptypes": "error",
+        "jsx-a11y/aria-role": "error",
+        "jsx-a11y/aria-unsupported-elements": "error",
+        "jsx-a11y/autocomplete-valid": "error",
+        "jsx-a11y/click-events-have-key-events": "error",
+        "jsx-a11y/control-has-associated-label": [
+          "off",
+          {
+            "ignoreElements": [
+              "audio",
+              "canvas",
+              "embed",
+              "input",
+              "textarea",
+              "tr",
+              "video"
+            ],
+            "ignoreRoles": [
+              "grid",
+              "listbox",
+              "menu",
+              "menubar",
+              "radiogroup",
+              "row",
+              "tablist",
+              "toolbar",
+              "tree",
+              "treegrid"
+            ],
+            "includeRoles": [
+              "alert",
+              "dialog"
+            ]
+          }
+        ],
+        "jsx-a11y/heading-has-content": "error",
+        "jsx-a11y/html-has-lang": "error",
+        "jsx-a11y/iframe-has-title": "error",
+        "jsx-a11y/img-redundant-alt": "error",
+        "jsx-a11y/interactive-supports-focus": [
+          "error",
+          {
+            "tabbable": [
+              "button",
+              "checkbox",
+              "link",
+              "progressbar",
+              "searchbox",
+              "slider",
+              "spinbutton",
+              "switch",
+              "textbox"
+            ]
+          }
+        ],
+        "jsx-a11y/label-has-for": "off",
+        "jsx-a11y/label-has-associated-control": "error",
+        "jsx-a11y/media-has-caption": "error",
+        "jsx-a11y/mouse-events-have-key-events": "error",
+        "jsx-a11y/no-access-key": "error",
+        "jsx-a11y/no-autofocus": "error",
+        "jsx-a11y/no-distracting-elements": "error",
+        "jsx-a11y/no-interactive-element-to-noninteractive-role": "error",
+        "jsx-a11y/no-noninteractive-element-interactions": [
+          "error",
+          {
+            "body": [
+              "onError",
+              "onLoad"
+            ],
+            "iframe": [
+              "onError",
+              "onLoad"
+            ],
+            "img": [
+              "onError",
+              "onLoad"
+            ]
+          }
+        ],
+        "jsx-a11y/no-noninteractive-element-to-interactive-role": "error",
+        "jsx-a11y/no-noninteractive-tabindex": "error",
+        "jsx-a11y/no-redundant-roles": "error",
+        "jsx-a11y/no-static-element-interactions": "error",
+        "jsx-a11y/role-has-required-aria-props": "error",
+        "jsx-a11y/role-supports-aria-props": "error",
+        "jsx-a11y/scope": "error",
+        "jsx-a11y/tabindex-no-positive": "error",
+        "@eslint-react/no-missing-component-display-name": "error",
+        "@eslint-react/no-class-component": "error",
+        "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
+        "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "error",
+        "@eslint-react/naming-convention/component-name": "error",
+        "@eslint-react/naming-convention/filename": [
+          "error",
+          {
+            "rule": "kebab-case"
+          }
+        ],
+        "@eslint-react/naming-convention/use-state": "error",
+        "jsx-a11y/lang": "error"
+      },
+      "settings": {
+        "jsx-a11y": {
+          "components": {
+            "Button": "button",
+            "Image": "img",
+            "Input": "input",
+            "Textarea": "textarea",
+            "Link": "a"
+          }
+        }
+      },
+      "index": 11
+    },
+    {
       "name": "tszhong0411:turbo",
       "plugins": {
         "turbo": {}
@@ -1971,7 +2194,187 @@
       "rules": {
         "turbo/no-undeclared-env-vars": "error"
       },
-      "index": 11
+      "index": 12
+    },
+    {
+      "name": "tszhong0411:next",
+      "plugins": {
+        "@next/next": {}
+      },
+      "rules": {
+        "@next/next/google-font-display": "warn",
+        "@next/next/google-font-preconnect": "warn",
+        "@next/next/next-script-for-ga": "warn",
+        "@next/next/no-async-client-component": "warn",
+        "@next/next/no-before-interactive-script-outside-document": "warn",
+        "@next/next/no-css-tags": "warn",
+        "@next/next/no-head-element": "warn",
+        "@next/next/no-html-link-for-pages": "off",
+        "@next/next/no-img-element": "warn",
+        "@next/next/no-page-custom-font": "warn",
+        "@next/next/no-styled-jsx-in-document": "warn",
+        "@next/next/no-sync-scripts": "error",
+        "@next/next/no-title-in-document-head": "warn",
+        "@next/next/no-typos": "warn",
+        "@next/next/no-unwanted-polyfillio": "warn",
+        "@next/next/inline-script-id": "error",
+        "@next/next/no-assign-module-variable": "error",
+        "@next/next/no-document-import-in-page": "error",
+        "@next/next/no-duplicate-head": "error",
+        "@next/next/no-head-import-in-document": "error",
+        "@next/next/no-script-component-in-head": "error"
+      },
+      "index": 13
+    },
+    {
+      "name": "tszhong0411:playwright",
+      "rules": {
+        "no-empty-pattern": "off",
+        "playwright/expect-expect": "warn",
+        "playwright/max-nested-describe": "warn",
+        "playwright/missing-playwright-await": "error",
+        "playwright/no-conditional-expect": "warn",
+        "playwright/no-conditional-in-test": "warn",
+        "playwright/no-element-handle": "warn",
+        "playwright/no-eval": "warn",
+        "playwright/no-focused-test": "error",
+        "playwright/no-force-option": "warn",
+        "playwright/no-nested-step": "warn",
+        "playwright/no-networkidle": "error",
+        "playwright/no-page-pause": "warn",
+        "playwright/no-skipped-test": "warn",
+        "playwright/no-standalone-expect": "error",
+        "playwright/no-unsafe-references": "error",
+        "playwright/no-useless-await": "warn",
+        "playwright/no-useless-not": "warn",
+        "playwright/no-wait-for-selector": "warn",
+        "playwright/no-wait-for-timeout": "warn",
+        "playwright/prefer-web-first-assertions": "error",
+        "playwright/valid-describe-callback": "error",
+        "playwright/valid-expect": "error",
+        "playwright/valid-expect-in-promise": "error",
+        "playwright/valid-title": "error"
+      },
+      "languageOptions": {
+        "globals": {
+          "AbortController": false,
+          "AbortSignal": false,
+          "atob": false,
+          "Blob": false,
+          "BroadcastChannel": false,
+          "btoa": false,
+          "ByteLengthQueuingStrategy": false,
+          "clearInterval": false,
+          "clearTimeout": false,
+          "CompressionStream": false,
+          "console": false,
+          "CountQueuingStrategy": false,
+          "crypto": false,
+          "Crypto": false,
+          "CryptoKey": false,
+          "CustomEvent": false,
+          "DecompressionStream": false,
+          "DOMException": false,
+          "Event": false,
+          "EventTarget": false,
+          "fetch": false,
+          "File": false,
+          "FormData": false,
+          "Headers": false,
+          "Intl": false,
+          "MessageChannel": false,
+          "MessageEvent": false,
+          "MessagePort": false,
+          "performance": false,
+          "PerformanceEntry": false,
+          "PerformanceMark": false,
+          "PerformanceMeasure": false,
+          "PerformanceObserver": false,
+          "PerformanceObserverEntryList": false,
+          "PerformanceResourceTiming": false,
+          "queueMicrotask": false,
+          "ReadableByteStreamController": false,
+          "ReadableStream": false,
+          "ReadableStreamBYOBReader": false,
+          "ReadableStreamBYOBRequest": false,
+          "ReadableStreamDefaultController": false,
+          "ReadableStreamDefaultReader": false,
+          "Request": false,
+          "Response": false,
+          "setInterval": false,
+          "setTimeout": false,
+          "structuredClone": false,
+          "SubtleCrypto": false,
+          "TextDecoder": false,
+          "TextDecoderStream": false,
+          "TextEncoder": false,
+          "TextEncoderStream": false,
+          "TransformStream": false,
+          "TransformStreamDefaultController": false,
+          "URL": false,
+          "URLSearchParams": false,
+          "WebAssembly": false,
+          "WritableStream": false,
+          "WritableStreamDefaultController": false,
+          "WritableStreamDefaultWriter": false
+        }
+      },
+      "plugins": {
+        "playwright": {}
+      },
+      "files": [
+        "**/e2e/**/*.{test,spec}.?([cm])[jt]s?(x)"
+      ],
+      "index": 14
+    },
+    {
+      "name": "tszhong0411:testing-library",
+      "plugins": {
+        "testing-library": {}
+      },
+      "rules": {
+        "testing-library/await-async-events": [
+          "error",
+          {
+            "eventModule": "userEvent"
+          }
+        ],
+        "testing-library/await-async-queries": "error",
+        "testing-library/await-async-utils": "error",
+        "testing-library/no-await-sync-events": [
+          "error",
+          {
+            "eventModules": [
+              "fire-event"
+            ]
+          }
+        ],
+        "testing-library/no-await-sync-queries": "error",
+        "testing-library/no-container": "error",
+        "testing-library/no-debugging-utils": "warn",
+        "testing-library/no-dom-import": [
+          "error",
+          "react"
+        ],
+        "testing-library/no-global-regexp-flag-in-query": "error",
+        "testing-library/no-manual-cleanup": "error",
+        "testing-library/no-node-access": "error",
+        "testing-library/no-promise-in-fire-event": "error",
+        "testing-library/no-render-in-lifecycle": "error",
+        "testing-library/no-unnecessary-act": "error",
+        "testing-library/no-wait-for-multiple-assertions": "error",
+        "testing-library/no-wait-for-side-effects": "error",
+        "testing-library/no-wait-for-snapshot": "error",
+        "testing-library/prefer-find-by": "error",
+        "testing-library/prefer-presence-queries": "error",
+        "testing-library/prefer-query-by-disappearance": "error",
+        "testing-library/prefer-screen-queries": "error",
+        "testing-library/render-result-naming-convention": "error"
+      },
+      "files": [
+        "**/tests/**/*.{test,spec}.?([cm])[jt]s?(x)"
+      ],
+      "index": 15
     }
   ],
   "rules": {
@@ -9465,6 +9868,1003 @@
       "name": "@typescript-eslint/use-unknown-in-catch-callback-variable",
       "plugin": "@typescript-eslint"
     },
+    "@eslint-react/avoid-shorthand-boolean": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce boolean attributes notation in JSX",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/avoid-shorthand-boolean"
+      },
+      "name": "@eslint-react/avoid-shorthand-boolean",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/avoid-shorthand-fragment": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce using fragment component instead of shorthand fragment syntax",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/avoid-shorthand-fragment"
+      },
+      "name": "@eslint-react/avoid-shorthand-fragment",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/ensure-forward-ref-using-ref": {
+      "type": "problem",
+      "docs": {
+        "description": "require all 'forwardRef' components include a 'ref' parameter",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/ensure-forward-ref-using-ref"
+      },
+      "name": "@eslint-react/ensure-forward-ref-using-ref",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-access-state-in-setstate": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow accessing 'this.state' within 'setState'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-access-state-in-setstate"
+      },
+      "name": "@eslint-react/no-access-state-in-setstate",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-array-index-key": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow using Array index as key",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-array-index-key"
+      },
+      "name": "@eslint-react/no-array-index-key",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-children-count": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'Children.count'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-children-count"
+      },
+      "name": "@eslint-react/no-children-count",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-children-for-each": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'Children.forEach'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-children-for-each"
+      },
+      "name": "@eslint-react/no-children-for-each",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-children-map": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'Children.map'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-children-map"
+      },
+      "name": "@eslint-react/no-children-map",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-children-only": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'Children.only'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-children-only"
+      },
+      "name": "@eslint-react/no-children-only",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-children-prop": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow passing of 'children' as props",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-children-prop"
+      },
+      "name": "@eslint-react/no-children-prop",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-children-to-array": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'Children.toArray'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-children-to-array"
+      },
+      "name": "@eslint-react/no-children-to-array",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-class-component": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow class component",
+        "url": "https://eslint-react.xyz/rules/no-class-component"
+      },
+      "name": "@eslint-react/no-class-component",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-clone-element": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'cloneElement'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-clone-element"
+      },
+      "name": "@eslint-react/no-clone-element",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-comment-textnodes": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow comments from being inserted as text nodes",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-comment-textnodes"
+      },
+      "name": "@eslint-react/no-comment-textnodes",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-complicated-conditional-rendering": {
+      "type": "problem",
+      "deprecated": true,
+      "docs": {
+        "description": "disallow complicated conditional rendering",
+        "requiresTypeChecking": true,
+        "url": "https://eslint-react.xyz/rules/no-complicated-conditional-rendering"
+      },
+      "name": "@eslint-react/no-complicated-conditional-rendering",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-component-will-mount": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'componentWillMount'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-component-will-mount"
+      },
+      "name": "@eslint-react/no-component-will-mount",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-component-will-receive-props": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'componentWillReceiveProps'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-component-will-receive-props"
+      },
+      "name": "@eslint-react/no-component-will-receive-props",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-component-will-update": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'componentWillUpdate'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-component-will-update"
+      },
+      "name": "@eslint-react/no-component-will-update",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-create-ref": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'createRef' in function components",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-create-ref"
+      },
+      "name": "@eslint-react/no-create-ref",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-direct-mutation-state": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow direct mutation of state",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-direct-mutation-state"
+      },
+      "name": "@eslint-react/no-direct-mutation-state",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-duplicate-key": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow duplicate keys in 'key' prop when rendering list",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-duplicate-key"
+      },
+      "name": "@eslint-react/no-duplicate-key",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-implicit-key": {
+      "type": "problem",
+      "deprecated": true,
+      "docs": {
+        "description": "disallow spreading 'key' from objects.",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-implicit-key"
+      },
+      "name": "@eslint-react/no-implicit-key",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-leaked-conditional-rendering": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow problematic leaked values from being rendered",
+        "recommended": "recommended",
+        "requiresTypeChecking": true,
+        "url": "https://eslint-react.xyz/rules/no-leaked-conditional-rendering"
+      },
+      "name": "@eslint-react/no-leaked-conditional-rendering",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-missing-component-display-name": {
+      "type": "problem",
+      "docs": {
+        "description": "require 'displayName' for memo and forwardRef components",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-missing-component-display-name"
+      },
+      "name": "@eslint-react/no-missing-component-display-name",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-missing-key": {
+      "type": "problem",
+      "docs": {
+        "description": "require 'key' prop when rendering list",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-missing-key"
+      },
+      "name": "@eslint-react/no-missing-key",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-nested-components": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of unstable nested components",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-nested-components"
+      },
+      "name": "@eslint-react/no-nested-components",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-redundant-should-component-update": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'shouldComponentUpdate' in class component extends 'React.PureComponent'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-redundant-should-component-update"
+      },
+      "name": "@eslint-react/no-redundant-should-component-update",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-set-state-in-component-did-mount": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'setState' in 'componentDidMount'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-set-state-in-component-did-mount"
+      },
+      "name": "@eslint-react/no-set-state-in-component-did-mount",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-set-state-in-component-did-update": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'setState' in 'componentDidUpdate'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-set-state-in-component-did-update"
+      },
+      "name": "@eslint-react/no-set-state-in-component-did-update",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-set-state-in-component-will-update": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'setState' in 'componentWillUpdate'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-set-state-in-component-will-update"
+      },
+      "name": "@eslint-react/no-set-state-in-component-will-update",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-string-refs": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow using deprecated string refs",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-string-refs"
+      },
+      "name": "@eslint-react/no-string-refs",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unsafe-component-will-mount": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'UNSAFE_componentWillMount'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unsafe-component-will-mount"
+      },
+      "name": "@eslint-react/no-unsafe-component-will-mount",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unsafe-component-will-receive-props": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'UNSAFE_componentWillReceiveProps'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unsafe-component-will-receive-props"
+      },
+      "name": "@eslint-react/no-unsafe-component-will-receive-props",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unsafe-component-will-update": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of 'UNSAFE_componentWillUpdate'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unsafe-component-will-update"
+      },
+      "name": "@eslint-react/no-unsafe-component-will-update",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unstable-context-value": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow passing constructed values to context providers",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unstable-context-value"
+      },
+      "name": "@eslint-react/no-unstable-context-value",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unstable-default-props": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of unstable value as default param in function component",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unstable-default-props"
+      },
+      "name": "@eslint-react/no-unstable-default-props",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unused-class-component-members": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow unused class component members",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unused-class-component-members"
+      },
+      "name": "@eslint-react/no-unused-class-component-members",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-unused-state": {
+      "type": "problem",
+      "docs": {
+        "description": "Prevents unused state of class component.",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-unused-state"
+      },
+      "name": "@eslint-react/no-unused-state",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-useless-fragment": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow unnecessary fragments",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/no-useless-fragment"
+      },
+      "name": "@eslint-react/no-useless-fragment",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/prefer-destructuring-assignment": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce using destructuring assignment in component props and context",
+        "recommended": "recommended",
+        "url": "https://eslint-react.xyz/rules/prefer-destructuring-assignment"
+      },
+      "name": "@eslint-react/prefer-destructuring-assignment",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/prefer-shorthand-boolean": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce boolean attributes notation in JSX",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/prefer-shorthand-boolean"
+      },
+      "name": "@eslint-react/prefer-shorthand-boolean",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/prefer-shorthand-fragment": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce using fragment syntax instead of Fragment component",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/prefer-shorthand-fragment"
+      },
+      "name": "@eslint-react/prefer-shorthand-fragment",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/dom/no-children-in-void-dom-elements": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow passing 'children' to void DOM elements",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-children-in-void-dom-elements"
+      },
+      "name": "@eslint-react/dom/no-children-in-void-dom-elements",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-dangerously-set-innerhtml": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow when a DOM component is using 'dangerouslySetInnerHTML'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-dangerously-set-innerhtml"
+      },
+      "name": "@eslint-react/dom/no-dangerously-set-innerhtml",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow when a DOM component is using both 'children' and 'dangerouslySetInnerHTML'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-dangerously-set-innerhtml-with-children"
+      },
+      "name": "@eslint-react/dom/no-dangerously-set-innerhtml-with-children",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-find-dom-node": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'findDOMNode'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-find-dom-node"
+      },
+      "name": "@eslint-react/dom/no-find-dom-node",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-missing-button-type": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that button component have an explicit 'type' attribute",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-missing-button-type"
+      },
+      "name": "@eslint-react/dom/no-missing-button-type",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-missing-iframe-sandbox": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that 'iframe' component have an explicit 'sandbox' attribute",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-missing-iframe-sandbox"
+      },
+      "name": "@eslint-react/dom/no-missing-iframe-sandbox",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-namespace": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that namespaces are not used in React elements",
+        "url": "https://eslint-react.xyz/rules/dom-no-namespace"
+      },
+      "name": "@eslint-react/dom/no-namespace",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-render-return-value": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow usage of the return value of 'ReactDOM.render'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-render-return-value"
+      },
+      "name": "@eslint-react/dom/no-render-return-value",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-script-url": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'javascript:' URLs as JSX event handler prop's value",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-script-url"
+      },
+      "name": "@eslint-react/dom/no-script-url",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-unsafe-iframe-sandbox": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow unsafe iframe 'sandbox' attribute combinations",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-unsafe-iframe-sandbox"
+      },
+      "name": "@eslint-react/dom/no-unsafe-iframe-sandbox",
+      "plugin": "@eslint-react/dom"
+    },
+    "@eslint-react/dom/no-unsafe-target-blank": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow 'target=\"_blank\"' on an external link without 'rel=\"noreferrer noopener\"'.",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/dom-no-unsafe-target-blank"
+      },
+      "name": "@eslint-react/dom/no-unsafe-target-blank",
+      "plugin": "@eslint-react/dom"
+    },
+    "react-hooks/rules-of-hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "enforces the Rules of Hooks",
+        "recommended": true,
+        "url": "https://reactjs.org/docs/hooks-rules.html"
+      },
+      "name": "react-hooks/rules-of-hooks",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/exhaustive-deps": {
+      "type": "suggestion",
+      "docs": {
+        "description": "verifies the list of dependencies for Hooks like useEffect and similar",
+        "recommended": true,
+        "url": "https://github.com/facebook/react/issues/14920"
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/exhaustive-deps",
+      "plugin": "react-hooks"
+    },
+    "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce custom hooks using other hooks",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/hooks-extra-ensure-custom-hooks-using-other-hooks"
+      },
+      "name": "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks",
+      "plugin": "@eslint-react/hooks-extra"
+    },
+    "@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce 'useCallback' has non-empty dependencies array",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/hooks-extra-ensure-use-callback-has-non-empty-deps"
+      },
+      "name": "@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps",
+      "plugin": "@eslint-react/hooks-extra"
+    },
+    "@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce 'useMemo' has non-empty dependencies array",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/hooks-extra-ensure-use-memo-has-non-empty-deps"
+      },
+      "name": "@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps",
+      "plugin": "@eslint-react/hooks-extra"
+    },
+    "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow function calls in 'useState' that aren't wrapped in an initializer function",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/hooks-extra-prefer-use-state-lazy-initialization"
+      },
+      "name": "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization",
+      "plugin": "@eslint-react/hooks-extra"
+    },
+    "@eslint-react/naming-convention/component-name": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce component naming convention to 'PascalCase' or 'CONSTANT_CASE'",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/naming-convention-component-name"
+      },
+      "name": "@eslint-react/naming-convention/component-name",
+      "plugin": "@eslint-react/naming-convention"
+    },
+    "@eslint-react/naming-convention/filename": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce naming convention for JSX filenames",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/naming-convention-filename"
+      },
+      "name": "@eslint-react/naming-convention/filename",
+      "plugin": "@eslint-react/naming-convention"
+    },
+    "@eslint-react/naming-convention/filename-extension": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce naming convention for JSX file extensions",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/naming-convention-filename-extension"
+      },
+      "name": "@eslint-react/naming-convention/filename-extension",
+      "plugin": "@eslint-react/naming-convention"
+    },
+    "@eslint-react/naming-convention/use-state": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce destructuring and symmetric naming of 'useState' hook value and setter variables",
+        "recommended": "recommended",
+        "requiresTypeChecking": false,
+        "url": "https://eslint-react.xyz/rules/naming-convention-use-state"
+      },
+      "name": "@eslint-react/naming-convention/use-state",
+      "plugin": "@eslint-react/naming-convention"
+    },
+    "jsx-a11y/accessible-emoji": {
+      "docs": {
+        "description": "Enforce emojis are wrapped in `<span>` and provide screenreader access.",
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/accessible-emoji.md"
+      },
+      "deprecated": true,
+      "name": "jsx-a11y/accessible-emoji",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/alt-text": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/alt-text.md",
+        "description": "Enforce all elements that require alternative text have meaningful information to relay back to end user."
+      },
+      "name": "jsx-a11y/alt-text",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/anchor-ambiguous-text": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-ambiguous-text.md",
+        "description": "Enforce `<a>` text to not exactly match \"click here\", \"here\", \"link\", or \"a link\"."
+      },
+      "name": "jsx-a11y/anchor-ambiguous-text",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/anchor-has-content": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-has-content.md",
+        "description": "Enforce all anchors to contain accessible content."
+      },
+      "name": "jsx-a11y/anchor-has-content",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/anchor-is-valid": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-is-valid.md",
+        "description": "Enforce all anchors are valid, navigable elements."
+      },
+      "name": "jsx-a11y/anchor-is-valid",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/aria-activedescendant-has-tabindex": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-activedescendant-has-tabindex.md",
+        "description": "Enforce elements with aria-activedescendant are tabbable."
+      },
+      "name": "jsx-a11y/aria-activedescendant-has-tabindex",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/aria-props": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-props.md",
+        "description": "Enforce all `aria-*` props are valid."
+      },
+      "name": "jsx-a11y/aria-props",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/aria-proptypes": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-proptypes.md",
+        "description": "Enforce ARIA state and property values are valid."
+      },
+      "name": "jsx-a11y/aria-proptypes",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/aria-role": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-role.md",
+        "description": "Enforce that elements with ARIA roles must use a valid, non-abstract ARIA role."
+      },
+      "name": "jsx-a11y/aria-role",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/aria-unsupported-elements": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-unsupported-elements.md",
+        "description": "Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes."
+      },
+      "name": "jsx-a11y/aria-unsupported-elements",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/autocomplete-valid": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/autocomplete-valid.md",
+        "description": "Enforce that autocomplete attributes are used correctly."
+      },
+      "name": "jsx-a11y/autocomplete-valid",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/click-events-have-key-events": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/click-events-have-key-events.md",
+        "description": "Enforce a clickable non-interactive element has at least one keyboard event listener."
+      },
+      "name": "jsx-a11y/click-events-have-key-events",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/control-has-associated-label": {
+      "docs": {
+        "description": "Enforce that a control (an interactive element) has a text label.",
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/control-has-associated-label.md"
+      },
+      "name": "jsx-a11y/control-has-associated-label",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/heading-has-content": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/heading-has-content.md",
+        "description": "Enforce heading (`h1`, `h2`, etc) elements contain accessible content."
+      },
+      "name": "jsx-a11y/heading-has-content",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/html-has-lang": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/html-has-lang.md",
+        "description": "Enforce `<html>` element has `lang` prop."
+      },
+      "name": "jsx-a11y/html-has-lang",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/iframe-has-title": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/iframe-has-title.md",
+        "description": "Enforce iframe elements have a title attribute."
+      },
+      "name": "jsx-a11y/iframe-has-title",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/img-redundant-alt": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/img-redundant-alt.md",
+        "description": "Enforce `<img>` alt prop does not contain the word \"image\", \"picture\", or \"photo\"."
+      },
+      "name": "jsx-a11y/img-redundant-alt",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/interactive-supports-focus": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/interactive-supports-focus.md",
+        "description": "Enforce that elements with interactive handlers like `onClick` must be focusable."
+      },
+      "name": "jsx-a11y/interactive-supports-focus",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/label-has-associated-control": {
+      "docs": {
+        "description": "Enforce that a `label` tag has a text label and an associated control.",
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md"
+      },
+      "name": "jsx-a11y/label-has-associated-control",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/label-has-for": {
+      "deprecated": true,
+      "replacedBy": [
+        "label-has-associated-control"
+      ],
+      "docs": {
+        "description": "Enforce that `<label>` elements have the `htmlFor` prop.",
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/label-has-for.md"
+      },
+      "name": "jsx-a11y/label-has-for",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/lang": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/lang.md",
+        "description": "Enforce lang attribute has a valid value."
+      },
+      "name": "jsx-a11y/lang",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/media-has-caption": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/media-has-caption.md",
+        "description": "Enforces that `<audio>` and `<video>` elements must have a `<track>` for captions."
+      },
+      "name": "jsx-a11y/media-has-caption",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/mouse-events-have-key-events": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/mouse-events-have-key-events.md",
+        "description": "Enforce that `onMouseOver`/`onMouseOut` are accompanied by `onFocus`/`onBlur` for keyboard-only users."
+      },
+      "name": "jsx-a11y/mouse-events-have-key-events",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-access-key": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-access-key.md",
+        "description": "Enforce that the `accessKey` prop is not used on any element to avoid complications with keyboard commands used by a screenreader."
+      },
+      "name": "jsx-a11y/no-access-key",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-aria-hidden-on-focusable": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-aria-hidden-on-focusable.md",
+        "description": "Disallow `aria-hidden=\"true\"` from being set on focusable elements."
+      },
+      "name": "jsx-a11y/no-aria-hidden-on-focusable",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-autofocus": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-autofocus.md",
+        "description": "Enforce autoFocus prop is not used."
+      },
+      "name": "jsx-a11y/no-autofocus",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-distracting-elements": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-distracting-elements.md",
+        "description": "Enforce distracting elements are not used."
+      },
+      "name": "jsx-a11y/no-distracting-elements",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-interactive-element-to-noninteractive-role": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-interactive-element-to-noninteractive-role.md",
+        "description": "Interactive elements should not be assigned non-interactive roles."
+      },
+      "name": "jsx-a11y/no-interactive-element-to-noninteractive-role",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-noninteractive-element-interactions": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-element-interactions.md",
+        "description": "Non-interactive elements should not be assigned mouse or keyboard event listeners."
+      },
+      "name": "jsx-a11y/no-noninteractive-element-interactions",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-element-to-interactive-role.md",
+        "description": "Non-interactive elements should not be assigned interactive roles."
+      },
+      "name": "jsx-a11y/no-noninteractive-element-to-interactive-role",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-noninteractive-tabindex": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-tabindex.md",
+        "description": "`tabIndex` should only be declared on interactive elements."
+      },
+      "name": "jsx-a11y/no-noninteractive-tabindex",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-onchange": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-onchange.md",
+        "description": "Enforce usage of `onBlur` over `onChange` on select menus for accessibility."
+      },
+      "deprecated": true,
+      "name": "jsx-a11y/no-onchange",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-redundant-roles": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-redundant-roles.md",
+        "description": "Enforce explicit role property is not the same as implicit/default role property on element."
+      },
+      "name": "jsx-a11y/no-redundant-roles",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/no-static-element-interactions": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-static-element-interactions.md",
+        "description": "Enforce that non-interactive, visible elements (such as `<div>`) that have click handlers use the role attribute."
+      },
+      "name": "jsx-a11y/no-static-element-interactions",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/prefer-tag-over-role": {
+      "docs": {
+        "description": "Enforces using semantic DOM elements over the ARIA `role` property.",
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/prefer-tag-over-role.md"
+      },
+      "name": "jsx-a11y/prefer-tag-over-role",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/role-has-required-aria-props": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/role-has-required-aria-props.md",
+        "description": "Enforce that elements with ARIA roles must have all required attributes for that role."
+      },
+      "name": "jsx-a11y/role-has-required-aria-props",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/role-supports-aria-props": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/role-supports-aria-props.md",
+        "description": "Enforce that elements with explicit or implicit roles defined contain only `aria-*` properties supported by that `role`."
+      },
+      "name": "jsx-a11y/role-supports-aria-props",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/scope": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/scope.md",
+        "description": "Enforce `scope` prop is only used on `<th>` elements."
+      },
+      "name": "jsx-a11y/scope",
+      "plugin": "jsx-a11y"
+    },
+    "jsx-a11y/tabindex-no-positive": {
+      "docs": {
+        "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/tabindex-no-positive.md",
+        "description": "Enforce `tabIndex` value is not greater than zero."
+      },
+      "name": "jsx-a11y/tabindex-no-positive",
+      "plugin": "jsx-a11y"
+    },
     "turbo/no-undeclared-env-vars": {
       "type": "problem",
       "docs": {
@@ -9475,192 +10875,1508 @@
       },
       "name": "turbo/no-undeclared-env-vars",
       "plugin": "turbo"
+    },
+    "@next/next/google-font-display": {
+      "docs": {
+        "description": "Enforce font-display behavior with Google Fonts.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/google-font-display"
+      },
+      "type": "problem",
+      "name": "@next/next/google-font-display",
+      "plugin": "@next/next"
+    },
+    "@next/next/google-font-preconnect": {
+      "docs": {
+        "description": "Ensure `preconnect` is used with Google Fonts.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/google-font-preconnect"
+      },
+      "type": "problem",
+      "name": "@next/next/google-font-preconnect",
+      "plugin": "@next/next"
+    },
+    "@next/next/inline-script-id": {
+      "docs": {
+        "description": "Enforce `id` attribute on `next/script` components with inline content.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/inline-script-id"
+      },
+      "type": "problem",
+      "name": "@next/next/inline-script-id",
+      "plugin": "@next/next"
+    },
+    "@next/next/next-script-for-ga": {
+      "docs": {
+        "description": "Prefer `next/script` component when using the inline script for Google Analytics.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/next-script-for-ga"
+      },
+      "type": "problem",
+      "name": "@next/next/next-script-for-ga",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-assign-module-variable": {
+      "docs": {
+        "description": "Prevent assignment to the `module` variable.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-assign-module-variable"
+      },
+      "type": "problem",
+      "name": "@next/next/no-assign-module-variable",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-async-client-component": {
+      "docs": {
+        "description": "Prevent client components from being async functions.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-async-client-component"
+      },
+      "type": "problem",
+      "name": "@next/next/no-async-client-component",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-before-interactive-script-outside-document": {
+      "docs": {
+        "description": "Prevent usage of `next/script`'s `beforeInteractive` strategy outside of `pages/_document.js`.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-before-interactive-script-outside-document"
+      },
+      "type": "problem",
+      "name": "@next/next/no-before-interactive-script-outside-document",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-css-tags": {
+      "docs": {
+        "description": "Prevent manual stylesheet tags.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-css-tags"
+      },
+      "type": "problem",
+      "name": "@next/next/no-css-tags",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-document-import-in-page": {
+      "docs": {
+        "description": "Prevent importing `next/document` outside of `pages/_document.js`.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-document-import-in-page"
+      },
+      "type": "problem",
+      "name": "@next/next/no-document-import-in-page",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-duplicate-head": {
+      "docs": {
+        "description": "Prevent duplicate usage of `<Head>` in `pages/_document.js`.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-duplicate-head"
+      },
+      "type": "problem",
+      "name": "@next/next/no-duplicate-head",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-head-element": {
+      "docs": {
+        "description": "Prevent usage of `<head>` element.",
+        "category": "HTML",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-head-element"
+      },
+      "type": "problem",
+      "name": "@next/next/no-head-element",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-head-import-in-document": {
+      "docs": {
+        "description": "Prevent usage of `next/head` in `pages/_document.js`.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-head-import-in-document"
+      },
+      "type": "problem",
+      "name": "@next/next/no-head-import-in-document",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-html-link-for-pages": {
+      "docs": {
+        "description": "Prevent usage of `<a>` elements to navigate to internal Next.js pages.",
+        "category": "HTML",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-html-link-for-pages"
+      },
+      "type": "problem",
+      "name": "@next/next/no-html-link-for-pages",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-img-element": {
+      "docs": {
+        "description": "Prevent usage of `<img>` element due to slower LCP and higher bandwidth.",
+        "category": "HTML",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-img-element"
+      },
+      "type": "problem",
+      "name": "@next/next/no-img-element",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-page-custom-font": {
+      "docs": {
+        "description": "Prevent page-only custom fonts.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-page-custom-font"
+      },
+      "type": "problem",
+      "name": "@next/next/no-page-custom-font",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-script-component-in-head": {
+      "docs": {
+        "description": "Prevent usage of `next/script` in `next/head` component.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-script-component-in-head"
+      },
+      "type": "problem",
+      "name": "@next/next/no-script-component-in-head",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-styled-jsx-in-document": {
+      "docs": {
+        "description": "Prevent usage of `styled-jsx` in `pages/_document.js`.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-styled-jsx-in-document"
+      },
+      "type": "problem",
+      "name": "@next/next/no-styled-jsx-in-document",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-sync-scripts": {
+      "docs": {
+        "description": "Prevent synchronous scripts.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-sync-scripts"
+      },
+      "type": "problem",
+      "name": "@next/next/no-sync-scripts",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-title-in-document-head": {
+      "docs": {
+        "description": "Prevent usage of `<title>` with `Head` component from `next/document`.",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-title-in-document-head"
+      },
+      "type": "problem",
+      "name": "@next/next/no-title-in-document-head",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-typos": {
+      "docs": {
+        "description": "Prevent common typos in Next.js data fetching functions.",
+        "recommended": true
+      },
+      "type": "problem",
+      "name": "@next/next/no-typos",
+      "plugin": "@next/next"
+    },
+    "@next/next/no-unwanted-polyfillio": {
+      "docs": {
+        "description": "Prevent duplicate polyfills from Polyfill.io.",
+        "category": "HTML",
+        "recommended": true,
+        "url": "https://nextjs.org/docs/messages/no-unwanted-polyfillio"
+      },
+      "type": "problem",
+      "name": "@next/next/no-unwanted-polyfillio",
+      "plugin": "@next/next"
+    },
+    "playwright/expect-expect": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Enforce assertion to be made in a test body",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/expect-expect.md"
+      },
+      "type": "problem",
+      "name": "playwright/expect-expect",
+      "plugin": "playwright"
+    },
+    "playwright/max-expects": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Enforces a maximum number assertion calls in a test body",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/max-expects.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/max-expects",
+      "plugin": "playwright"
+    },
+    "playwright/max-nested-describe": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Enforces a maximum depth to nested describe calls",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/max-nested-describe.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/max-nested-describe",
+      "plugin": "playwright"
+    },
+    "playwright/missing-playwright-await": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Identify false positives when async Playwright APIs are not properly awaited.",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/missing-playwright-await.md"
+      },
+      "fixable": "code",
+      "type": "problem",
+      "name": "playwright/missing-playwright-await",
+      "plugin": "playwright"
+    },
+    "playwright/no-commented-out-tests": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow commented out tests",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-commented-out-tests.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-commented-out-tests",
+      "plugin": "playwright"
+    },
+    "playwright/no-conditional-expect": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow calling `expect` conditionally",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-conditional-expect.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-conditional-expect",
+      "plugin": "playwright"
+    },
+    "playwright/no-conditional-in-test": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow conditional logic in tests",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-conditional-in-test.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-conditional-in-test",
+      "plugin": "playwright"
+    },
+    "playwright/no-duplicate-hooks": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow duplicate setup and teardown hooks",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-duplicate-hooks.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/no-duplicate-hooks",
+      "plugin": "playwright"
+    },
+    "playwright/no-element-handle": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "The use of ElementHandle is discouraged, use Locator instead",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-element-handle.md"
+      },
+      "hasSuggestions": true,
+      "type": "suggestion",
+      "name": "playwright/no-element-handle",
+      "plugin": "playwright"
+    },
+    "playwright/no-eval": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "The use of `page.$eval` and `page.$$eval` are discouraged, use `locator.evaluate` or `locator.evaluateAll` instead",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-eval.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-eval",
+      "plugin": "playwright"
+    },
+    "playwright/no-focused-test": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Prevent usage of `.only()` focus test annotation",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-focused-test.md"
+      },
+      "hasSuggestions": true,
+      "type": "problem",
+      "name": "playwright/no-focused-test",
+      "plugin": "playwright"
+    },
+    "playwright/no-force-option": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Prevent usage of `{ force: true }` option.",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-force-option.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/no-force-option",
+      "plugin": "playwright"
+    },
+    "playwright/no-get-by-title": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallows the usage of getByTitle()",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-get-by-title.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/no-get-by-title",
+      "plugin": "playwright"
+    },
+    "playwright/no-hooks": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow setup and teardown hooks",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-hooks.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/no-hooks",
+      "plugin": "playwright"
+    },
+    "playwright/no-nested-step": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow nested `test.step()` methods",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-nested-step.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-nested-step",
+      "plugin": "playwright"
+    },
+    "playwright/no-networkidle": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Prevent usage of the networkidle option",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-networkidle.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-networkidle",
+      "plugin": "playwright"
+    },
+    "playwright/no-nth-methods": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow usage of nth methods",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-nth-methods.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-nth-methods",
+      "plugin": "playwright"
+    },
+    "playwright/no-page-pause": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Prevent usage of page.pause()",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-page-pause.md"
+      },
+      "type": "problem",
+      "name": "playwright/no-page-pause",
+      "plugin": "playwright"
+    },
+    "playwright/no-raw-locators": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallows the usage of raw locators",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-raw-locators.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/no-raw-locators",
+      "plugin": "playwright"
+    },
+    "playwright/no-restricted-matchers": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow specific matchers & modifiers",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-restricted-matchers.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/no-restricted-matchers",
+      "plugin": "playwright"
+    },
+    "playwright/no-skipped-test": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Prevent usage of the `.skip()` skip test annotation.",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-skipped-test.md"
+      },
+      "hasSuggestions": true,
+      "type": "suggestion",
+      "name": "playwright/no-skipped-test",
+      "plugin": "playwright"
+    },
+    "playwright/no-standalone-expect": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow using `expect` outside of `test` blocks",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-standalone-expect.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/no-standalone-expect",
+      "plugin": "playwright"
+    },
+    "playwright/no-unsafe-references": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Prevent unsafe variable references in page.evaluate()",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-unsafe-references.md"
+      },
+      "fixable": "code",
+      "type": "problem",
+      "name": "playwright/no-unsafe-references",
+      "plugin": "playwright"
+    },
+    "playwright/no-useless-await": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Disallow unnecessary awaits for Playwright methods",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-useless-await.md"
+      },
+      "fixable": "code",
+      "type": "problem",
+      "name": "playwright/no-useless-await",
+      "plugin": "playwright"
+    },
+    "playwright/no-useless-not": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Disallow usage of 'not' matchers when a more specific matcher exists",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-useless-not.md"
+      },
+      "fixable": "code",
+      "type": "problem",
+      "name": "playwright/no-useless-not",
+      "plugin": "playwright"
+    },
+    "playwright/no-wait-for-selector": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Prevent usage of page.waitForSelector()",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-wait-for-selector.md"
+      },
+      "hasSuggestions": true,
+      "type": "suggestion",
+      "name": "playwright/no-wait-for-selector",
+      "plugin": "playwright"
+    },
+    "playwright/no-wait-for-timeout": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Prevent usage of page.waitForTimeout()",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-wait-for-timeout.md"
+      },
+      "hasSuggestions": true,
+      "type": "suggestion",
+      "name": "playwright/no-wait-for-timeout",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-comparison-matcher": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using the built-in comparison matchers",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-comparision-matcher.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-comparison-matcher",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-equality-matcher": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using the built-in equality matchers",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-equality-matcher.md"
+      },
+      "hasSuggestions": true,
+      "type": "suggestion",
+      "name": "playwright/prefer-equality-matcher",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-hooks-in-order": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Prefer having hooks in a consistent order",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-hooks-in-order.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/prefer-hooks-in-order",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-hooks-on-top": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest having hooks before any test cases",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-hooks-on-top.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/prefer-hooks-on-top",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-lowercase-title": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Enforce lowercase test names",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-lowercase-title.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-lowercase-title",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-strict-equal": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using `toStrictEqual()`",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-strict-equal.md"
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "type": "suggestion",
+      "name": "playwright/prefer-strict-equal",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-to-be": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using `toBe()` for primitive literals",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-be.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-to-be",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-to-contain": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using toContain()",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-contain.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-to-contain",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-to-have-count": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using `toHaveCount()`",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-have-count.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-to-have-count",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-to-have-length": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Suggest using `toHaveLength()`",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-have-length.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-to-have-length",
+      "plugin": "playwright"
+    },
+    "playwright/prefer-web-first-assertions": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Prefer web first assertions",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-web-first-assertions.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/prefer-web-first-assertions",
+      "plugin": "playwright"
+    },
+    "playwright/require-hook": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Require setup and teardown code to be within a hook",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/require-hook.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/require-hook",
+      "plugin": "playwright"
+    },
+    "playwright/require-soft-assertions": {
+      "docs": {
+        "description": "Require all assertions to use `expect.soft`",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/require-soft-assertions.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/require-soft-assertions",
+      "plugin": "playwright"
+    },
+    "playwright/require-to-throw-message": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Require a message for `toThrow()`",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/require-to-throw-message.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/require-to-throw-message",
+      "plugin": "playwright"
+    },
+    "playwright/require-top-level-describe": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Require test cases and hooks to be inside a `test.describe` block",
+        "recommended": false,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/require-top-level-describe.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/require-top-level-describe",
+      "plugin": "playwright"
+    },
+    "playwright/valid-describe-callback": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Enforce valid `describe()` callback",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/valid-describe-callback.md"
+      },
+      "type": "problem",
+      "name": "playwright/valid-describe-callback",
+      "plugin": "playwright"
+    },
+    "playwright/valid-expect": {
+      "docs": {
+        "category": "Possible Errors",
+        "description": "Enforce valid `expect()` usage",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/valid-expect.md"
+      },
+      "type": "problem",
+      "name": "playwright/valid-expect",
+      "plugin": "playwright"
+    },
+    "playwright/valid-expect-in-promise": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Require promises that have expectations in their chain to be valid",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/valid-expect-in-promise.md"
+      },
+      "type": "suggestion",
+      "name": "playwright/valid-expect-in-promise",
+      "plugin": "playwright"
+    },
+    "playwright/valid-title": {
+      "docs": {
+        "category": "Best Practices",
+        "description": "Enforce valid titles",
+        "recommended": true,
+        "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/valid-title.md"
+      },
+      "fixable": "code",
+      "type": "suggestion",
+      "name": "playwright/valid-title",
+      "plugin": "playwright"
+    },
+    "testing-library/await-async-events": {
+      "type": "problem",
+      "docs": {
+        "description": "Enforce promises from async event methods are handled",
+        "recommendedConfig": {
+          "dom": [
+            "error",
+            {
+              "eventModule": "userEvent"
+            }
+          ],
+          "angular": [
+            "error",
+            {
+              "eventModule": "userEvent"
+            }
+          ],
+          "react": [
+            "error",
+            {
+              "eventModule": "userEvent"
+            }
+          ],
+          "vue": [
+            "error",
+            {
+              "eventModule": [
+                "fireEvent",
+                "userEvent"
+              ]
+            }
+          ],
+          "marko": [
+            "error",
+            {
+              "eventModule": [
+                "fireEvent",
+                "userEvent"
+              ]
+            }
+          ]
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/await-async-events.md"
+      },
+      "fixable": "code",
+      "name": "testing-library/await-async-events",
+      "plugin": "testing-library"
+    },
+    "testing-library/await-async-queries": {
+      "type": "problem",
+      "docs": {
+        "description": "Enforce promises from async queries to be handled",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/await-async-queries.md"
+      },
+      "name": "testing-library/await-async-queries",
+      "plugin": "testing-library"
+    },
+    "testing-library/await-async-utils": {
+      "type": "problem",
+      "docs": {
+        "description": "Enforce promises from async utils to be awaited properly",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/await-async-utils.md"
+      },
+      "name": "testing-library/await-async-utils",
+      "plugin": "testing-library"
+    },
+    "testing-library/consistent-data-testid": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Ensures consistent usage of `data-testid`",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": false,
+          "vue": false,
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/consistent-data-testid.md"
+      },
+      "name": "testing-library/consistent-data-testid",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-await-sync-events": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow unnecessary `await` for sync events",
+        "recommendedConfig": {
+          "dom": [
+            "error",
+            {
+              "eventModules": [
+                "fire-event"
+              ]
+            }
+          ],
+          "angular": [
+            "error",
+            {
+              "eventModules": [
+                "fire-event"
+              ]
+            }
+          ],
+          "react": [
+            "error",
+            {
+              "eventModules": [
+                "fire-event"
+              ]
+            }
+          ],
+          "vue": false,
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-await-sync-events.md"
+      },
+      "name": "testing-library/no-await-sync-events",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-await-sync-queries": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow unnecessary `await` for sync queries",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-await-sync-queries.md"
+      },
+      "name": "testing-library/no-await-sync-queries",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-container": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow the use of `container` methods",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-container.md"
+      },
+      "name": "testing-library/no-container",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-debugging-utils": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow the use of debugging utilities like `debug`",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": "warn",
+          "react": "warn",
+          "vue": "warn",
+          "marko": "warn"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-debugging-utils.md"
+      },
+      "name": "testing-library/no-debugging-utils",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-dom-import": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow importing from DOM Testing Library",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": [
+            "error",
+            "angular"
+          ],
+          "react": [
+            "error",
+            "react"
+          ],
+          "vue": [
+            "error",
+            "vue"
+          ],
+          "marko": [
+            "error",
+            "marko"
+          ]
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-dom-import.md"
+      },
+      "fixable": "code",
+      "name": "testing-library/no-dom-import",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-global-regexp-flag-in-query": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Disallow the use of the global RegExp flag (/g) in queries",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-global-regexp-flag-in-query.md"
+      },
+      "fixable": "code",
+      "name": "testing-library/no-global-regexp-flag-in-query",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-manual-cleanup": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow the use of `cleanup`",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": "error",
+          "vue": "error",
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-manual-cleanup.md"
+      },
+      "name": "testing-library/no-manual-cleanup",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-node-access": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow direct Node access",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-node-access.md"
+      },
+      "name": "testing-library/no-node-access",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-promise-in-fire-event": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow the use of promises passed to a `fireEvent` method",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-promise-in-fire-event.md"
+      },
+      "name": "testing-library/no-promise-in-fire-event",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-render-in-lifecycle": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow the use of `render` in testing frameworks setup functions",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-render-in-lifecycle.md"
+      },
+      "name": "testing-library/no-render-in-lifecycle",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-unnecessary-act": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow wrapping Testing Library utils or empty callbacks in `act`",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": "error",
+          "vue": false,
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-unnecessary-act.md"
+      },
+      "name": "testing-library/no-unnecessary-act",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-wait-for-multiple-assertions": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Disallow the use of multiple `expect` calls inside `waitFor`",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-wait-for-multiple-assertions.md"
+      },
+      "name": "testing-library/no-wait-for-multiple-assertions",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-wait-for-side-effects": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Disallow the use of side effects in `waitFor`",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-wait-for-side-effects.md"
+      },
+      "name": "testing-library/no-wait-for-side-effects",
+      "plugin": "testing-library"
+    },
+    "testing-library/no-wait-for-snapshot": {
+      "type": "problem",
+      "docs": {
+        "description": "Ensures no snapshot is generated inside of a `waitFor` call",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/no-wait-for-snapshot.md"
+      },
+      "name": "testing-library/no-wait-for-snapshot",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-explicit-assert": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Suggest using explicit assertions rather than standalone queries",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": false,
+          "vue": false,
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-explicit-assert.md"
+      },
+      "name": "testing-library/prefer-explicit-assert",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-find-by": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Suggest using `find(All)By*` query instead of `waitFor` + `get(All)By*` to wait for elements",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-find-by.md"
+      },
+      "fixable": "code",
+      "name": "testing-library/prefer-find-by",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-implicit-assert": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Suggest using implicit assertions for getBy* & findBy* queries",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": false,
+          "vue": false,
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-implicit-assert.md"
+      },
+      "name": "testing-library/prefer-implicit-assert",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-presence-queries": {
+      "docs": {
+        "description": "Ensure appropriate `get*`/`query*` queries are used with their respective matchers",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-presence-queries.md"
+      },
+      "type": "suggestion",
+      "name": "testing-library/prefer-presence-queries",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-query-by-disappearance": {
+      "type": "problem",
+      "docs": {
+        "description": "Suggest using `queryBy*` queries when waiting for disappearance",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-query-by-disappearance.md"
+      },
+      "name": "testing-library/prefer-query-by-disappearance",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-query-matchers": {
+      "docs": {
+        "description": "Ensure the configured `get*`/`query*` query is used with the corresponding matchers",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": false,
+          "vue": false,
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-query-matchers.md"
+      },
+      "type": "suggestion",
+      "name": "testing-library/prefer-query-matchers",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-screen-queries": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Suggest using `screen` while querying",
+        "recommendedConfig": {
+          "dom": "error",
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-screen-queries.md"
+      },
+      "name": "testing-library/prefer-screen-queries",
+      "plugin": "testing-library"
+    },
+    "testing-library/prefer-user-event": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Suggest using `userEvent` over `fireEvent` for simulating user interactions",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": false,
+          "react": false,
+          "vue": false,
+          "marko": false
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/prefer-user-event.md"
+      },
+      "name": "testing-library/prefer-user-event",
+      "plugin": "testing-library"
+    },
+    "testing-library/render-result-naming-convention": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforce a valid naming for return value from `render`",
+        "recommendedConfig": {
+          "dom": false,
+          "angular": "error",
+          "react": "error",
+          "vue": "error",
+          "marko": "error"
+        },
+        "recommended": false,
+        "url": "https://github.com/testing-library/eslint-plugin-testing-library/tree/main/docs/rules/render-result-naming-convention.md"
+      },
+      "name": "testing-library/render-result-naming-convention",
+      "plugin": "testing-library"
     }
   },
   "files": [
     {
+      "filepath": "eslint.config.mjs",
+      "globs": [
+        "**/*.?([cm])js"
+      ],
+      "configs": [
+        11
+      ]
+    },
+    {
       "filepath": "src/configs/comments.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/ignores.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/import-sort.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/imports.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/javascript.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/next.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/playwright.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/prettier.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/react.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/sonarjs.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/tailwindcss.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/testing-library.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/turbo.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/typescript.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/configs/unicorn.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/env.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/globs.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/index.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "src/plugins.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     },
     {
       "filepath": "tsup.config.ts",
       "globs": [
+        "**/*.?([cm])ts",
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10
+        10,
+        11
       ]
     }
   ],
   "meta": {
-    "lastUpdate": 1718335886994,
+    "lastUpdate": 1718895867118,
     "basePath": "",
     "configPath": ""
   }
