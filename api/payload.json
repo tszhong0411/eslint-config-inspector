@@ -1,6 +1,45 @@
 {
   "configs": [
     {
+      "name": "eslint/defaults/languages",
+      "languageOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest",
+        "parserOptions": {}
+      },
+      "linterOptions": {
+        "reportUnusedDisableDirectives": 1
+      },
+      "index": 0
+    },
+    {
+      "name": "eslint/defaults/ignores",
+      "ignores": [
+        "**/node_modules/",
+        ".git/"
+      ],
+      "index": 1
+    },
+    {
+      "name": "eslint/defaults/files",
+      "files": [
+        "**/*.js",
+        "**/*.mjs"
+      ],
+      "index": 2
+    },
+    {
+      "name": "eslint/defaults/files-cjs",
+      "files": [
+        "**/*.cjs"
+      ],
+      "languageOptions": {
+        "sourceType": "commonjs",
+        "ecmaVersion": "latest"
+      },
+      "index": 3
+    },
+    {
       "ignores": [
         "node_modules/",
         "**/node_modules/**/",
@@ -36,12 +75,8 @@
         "**/dist/**/",
         ".eslint-config-inspector/",
         "**/.eslint-config-inspector/**/",
-        "honghong-me.db",
-        "**/honghong-me.db/**",
-        "honghong-me.db-shm",
-        "**/honghong-me.db-shm/**",
-        "honghong-me.db-wal",
-        "**/honghong-me.db-wal/**",
+        "volumes/",
+        "**/volumes/**/",
         ".mdx/",
         "**/.mdx/**/",
         "playwright-report/",
@@ -55,7 +90,7 @@
         "next-env.d.ts",
         "**/next-env.d.ts/**"
       ],
-      "index": 0
+      "index": 4
     },
     {
       "ignores": [
@@ -79,7 +114,7 @@
         "**/CHANGELOG*.md",
         "**/LICENSE*"
       ],
-      "index": 1
+      "index": 5
     },
     {
       "name": "tszhong0411:javascript",
@@ -172,6 +207,7 @@
           "close": false,
           "closed": false,
           "CloseEvent": false,
+          "CloseWatcher": false,
           "Comment": false,
           "CompositionEvent": false,
           "CompressionStream": false,
@@ -251,6 +287,7 @@
           "CSSUnitValue": false,
           "CSSUnparsedValue": false,
           "CSSVariableReferenceValue": false,
+          "CSSViewTransitionRule": false,
           "currentFrame": false,
           "currentTime": false,
           "CustomElementRegistry": false,
@@ -329,6 +366,7 @@
           "FileSystemHandle": false,
           "FileSystemWritableFileStream": false,
           "find": false,
+          "Float16Array": false,
           "focus": false,
           "FocusEvent": false,
           "FontData": false,
@@ -1120,6 +1158,7 @@
           "WebGLBuffer": false,
           "WebGLContextEvent": false,
           "WebGLFramebuffer": false,
+          "WebGLObject": false,
           "WebGLProgram": false,
           "WebGLQuery": false,
           "WebGLRenderbuffer": false,
@@ -1355,7 +1394,7 @@
           }
         ]
       },
-      "index": 2
+      "index": 6
     },
     {
       "name": "tszhong0411:unicorn",
@@ -1489,7 +1528,7 @@
         "unicorn/text-encoding-identifier-case": "error",
         "unicorn/throw-new-error": "error"
       },
-      "index": 3
+      "index": 7
     },
     {
       "name": "tszhong0411:comments",
@@ -1504,7 +1543,7 @@
         "eslint-comments/no-unused-enable": "error",
         "eslint-comments/require-description": "error"
       },
-      "index": 4
+      "index": 8
     },
     {
       "name": "tszhong0411:import-sort",
@@ -1533,7 +1572,7 @@
         ],
         "simple-import-sort/exports": "error"
       },
-      "index": 5
+      "index": 9
     },
     {
       "name": "tszhong0411:sonarjs",
@@ -1574,7 +1613,7 @@
         "sonarjs/prefer-single-boolean-return": "error",
         "sonarjs/prefer-while": "error"
       },
-      "index": 6
+      "index": 10
     },
     {
       "name": "tszhong0411:tailwindcss",
@@ -1599,7 +1638,7 @@
           ]
         }
       },
-      "index": 7
+      "index": 11
     },
     {
       "name": "tszhong0411:imports",
@@ -1622,7 +1661,7 @@
           }
         ]
       },
-      "index": 8
+      "index": 12
     },
     {
       "name": "tszhong0411:prettier",
@@ -1812,7 +1851,7 @@
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off"
       },
-      "index": 9
+      "index": 13
     },
     {
       "name": "tszhong0411:typescript",
@@ -1978,7 +2017,7 @@
           }
         ]
       },
-      "index": 10
+      "index": 14
     },
     {
       "name": "tszhong0411:react",
@@ -2014,7 +2053,6 @@
         "@eslint-react/no-children-for-each": "warn",
         "@eslint-react/no-children-map": "warn",
         "@eslint-react/no-children-only": "warn",
-        "@eslint-react/no-children-prop": "warn",
         "@eslint-react/no-children-to-array": "warn",
         "@eslint-react/no-clone-element": "warn",
         "@eslint-react/no-comment-textnodes": "warn",
@@ -2022,10 +2060,12 @@
         "@eslint-react/no-component-will-receive-props": "error",
         "@eslint-react/no-component-will-update": "error",
         "@eslint-react/no-create-ref": "error",
+        "@eslint-react/no-default-props": "error",
         "@eslint-react/no-direct-mutation-state": "error",
         "@eslint-react/no-duplicate-key": "error",
         "@eslint-react/no-missing-key": "error",
         "@eslint-react/no-nested-components": "warn",
+        "@eslint-react/no-prop-types": "error",
         "@eslint-react/no-redundant-should-component-update": "error",
         "@eslint-react/no-set-state-in-component-did-mount": "warn",
         "@eslint-react/no-set-state-in-component-did-update": "warn",
@@ -2038,10 +2078,6 @@
         "@eslint-react/no-unstable-default-props": "error",
         "@eslint-react/no-unused-class-component-members": "warn",
         "@eslint-react/no-unused-state": "warn",
-        "@eslint-react/no-useless-fragment": "warn",
-        "@eslint-react/prefer-destructuring-assignment": "warn",
-        "@eslint-react/prefer-shorthand-boolean": "warn",
-        "@eslint-react/prefer-shorthand-fragment": "warn",
         "@eslint-react/dom/no-children-in-void-dom-elements": "warn",
         "@eslint-react/dom/no-dangerously-set-innerhtml": "off",
         "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
@@ -2053,6 +2089,9 @@
         "@eslint-react/dom/no-script-url": "warn",
         "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
         "@eslint-react/dom/no-unsafe-target-blank": "warn",
+        "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
+        "@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect": "warn",
+        "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "error",
         "@eslint-react/no-leaked-conditional-rendering": "warn",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
@@ -2162,7 +2201,6 @@
         "@eslint-react/no-missing-component-display-name": "error",
         "@eslint-react/no-class-component": "error",
         "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
-        "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "error",
         "@eslint-react/naming-convention/component-name": "error",
         "@eslint-react/naming-convention/filename": [
           "error",
@@ -2184,7 +2222,7 @@
           }
         }
       },
-      "index": 11
+      "index": 15
     },
     {
       "name": "tszhong0411:turbo",
@@ -2194,7 +2232,7 @@
       "rules": {
         "turbo/no-undeclared-env-vars": "error"
       },
-      "index": 12
+      "index": 16
     },
     {
       "name": "tszhong0411:next",
@@ -2224,7 +2262,7 @@
         "@next/next/no-head-import-in-document": "error",
         "@next/next/no-script-component-in-head": "error"
       },
-      "index": 13
+      "index": 17
     },
     {
       "name": "tszhong0411:playwright",
@@ -2325,7 +2363,7 @@
       "files": [
         "**/e2e/**/*.{test,spec}.?([cm])[jt]s?(x)"
       ],
-      "index": 14
+      "index": 18
     },
     {
       "name": "tszhong0411:testing-library",
@@ -2374,7 +2412,7 @@
       "files": [
         "**/tests/**/*.{test,spec}.?([cm])[jt]s?(x)"
       ],
-      "index": 15
+      "index": 19
     }
   ],
   "rules": {
@@ -7254,7 +7292,8 @@
       "type": "layout",
       "fixable": "code",
       "docs": {
-        "url": "https://github.com/lydell/eslint-plugin-simple-import-sort#sort-order"
+        "url": "https://github.com/lydell/eslint-plugin-simple-import-sort#sort-order",
+        "description": "Automatically sort imports."
       },
       "name": "simple-import-sort/imports",
       "plugin": "simple-import-sort"
@@ -7263,7 +7302,8 @@
       "type": "layout",
       "fixable": "code",
       "docs": {
-        "url": "https://github.com/lydell/eslint-plugin-simple-import-sort#sort-order"
+        "url": "https://github.com/lydell/eslint-plugin-simple-import-sort#sort-order",
+        "description": "Automatically sort exports."
       },
       "name": "simple-import-sort/exports",
       "plugin": "simple-import-sort"
@@ -8721,6 +8761,16 @@
       "name": "@typescript-eslint/no-empty-interface",
       "plugin": "@typescript-eslint"
     },
+    "@typescript-eslint/no-empty-object-type": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Disallow accidentally using the \"empty object\" type",
+        "url": "https://typescript-eslint.io/rules/no-empty-object-type"
+      },
+      "hasSuggestions": true,
+      "name": "@typescript-eslint/no-empty-object-type",
+      "plugin": "@typescript-eslint"
+    },
     "@typescript-eslint/no-explicit-any": {
       "type": "suggestion",
       "docs": {
@@ -9088,6 +9138,15 @@
       "name": "@typescript-eslint/no-unnecessary-condition",
       "plugin": "@typescript-eslint"
     },
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": {
+      "docs": {
+        "description": "Disallow unnecessary assignment of constructor property parameter",
+        "url": "https://typescript-eslint.io/rules/no-unnecessary-parameter-property-assignment"
+      },
+      "type": "suggestion",
+      "name": "@typescript-eslint/no-unnecessary-parameter-property-assignment",
+      "plugin": "@typescript-eslint"
+    },
     "@typescript-eslint/no-unnecessary-qualifier": {
       "docs": {
         "description": "Disallow unnecessary namespace qualifiers",
@@ -9146,6 +9205,16 @@
       "name": "@typescript-eslint/no-unnecessary-type-constraint",
       "plugin": "@typescript-eslint"
     },
+    "@typescript-eslint/no-unnecessary-type-parameters": {
+      "docs": {
+        "description": "Disallow type parameters that only appear once",
+        "requiresTypeChecking": true,
+        "url": "https://typescript-eslint.io/rules/no-unnecessary-type-parameters"
+      },
+      "type": "problem",
+      "name": "@typescript-eslint/no-unnecessary-type-parameters",
+      "plugin": "@typescript-eslint"
+    },
     "@typescript-eslint/no-unsafe-argument": {
       "type": "problem",
       "docs": {
@@ -9200,6 +9269,16 @@
         "url": "https://typescript-eslint.io/rules/no-unsafe-enum-comparison"
       },
       "name": "@typescript-eslint/no-unsafe-enum-comparison",
+      "plugin": "@typescript-eslint"
+    },
+    "@typescript-eslint/no-unsafe-function-type": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow using the unsafe built-in Function type",
+        "url": "https://typescript-eslint.io/rules/no-unsafe-function-type"
+      },
+      "fixable": "code",
+      "name": "@typescript-eslint/no-unsafe-function-type",
       "plugin": "@typescript-eslint"
     },
     "@typescript-eslint/no-unsafe-member-access": {
@@ -9311,6 +9390,16 @@
         "url": "https://typescript-eslint.io/rules/no-var-requires"
       },
       "name": "@typescript-eslint/no-var-requires",
+      "plugin": "@typescript-eslint"
+    },
+    "@typescript-eslint/no-wrapper-object-types": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow using confusing built-in primitive class wrappers",
+        "url": "https://typescript-eslint.io/rules/no-wrapper-object-types"
+      },
+      "fixable": "code",
+      "name": "@typescript-eslint/no-wrapper-object-types",
       "plugin": "@typescript-eslint"
     },
     "@typescript-eslint/non-nullable-type-assertion-style": {
@@ -9691,7 +9780,7 @@
     },
     "@typescript-eslint/return-await": {
       "docs": {
-        "description": "Enforce consistent returning of awaited values",
+        "description": "Enforce consistent awaiting of returned promises",
         "requiresTypeChecking": true,
         "extendsBaseRule": "no-return-await",
         "url": "https://typescript-eslint.io/rules/return-await"
@@ -9872,8 +9961,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce boolean attributes notation in JSX",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/avoid-shorthand-boolean"
+        "url": "https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean"
       },
       "name": "@eslint-react/avoid-shorthand-boolean",
       "plugin": "@eslint-react"
@@ -9882,8 +9970,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce using fragment component instead of shorthand fragment syntax",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/avoid-shorthand-fragment"
+        "url": "https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment"
       },
       "name": "@eslint-react/avoid-shorthand-fragment",
       "plugin": "@eslint-react"
@@ -9892,9 +9979,7 @@
       "type": "problem",
       "docs": {
         "description": "require all 'forwardRef' components include a 'ref' parameter",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/ensure-forward-ref-using-ref"
+        "url": "https://eslint-react.xyz/docs/rules/ensure-forward-ref-using-ref"
       },
       "name": "@eslint-react/ensure-forward-ref-using-ref",
       "plugin": "@eslint-react"
@@ -9903,9 +9988,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow accessing 'this.state' within 'setState'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-access-state-in-setstate"
+        "url": "https://eslint-react.xyz/docs/rules/no-access-state-in-setstate"
       },
       "name": "@eslint-react/no-access-state-in-setstate",
       "plugin": "@eslint-react"
@@ -9914,9 +9997,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using Array index as key",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-array-index-key"
+        "url": "https://eslint-react.xyz/docs/rules/no-array-index-key"
       },
       "name": "@eslint-react/no-array-index-key",
       "plugin": "@eslint-react"
@@ -9925,9 +10006,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'Children.count'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-children-count"
+        "url": "https://eslint-react.xyz/docs/rules/no-children-count"
       },
       "name": "@eslint-react/no-children-count",
       "plugin": "@eslint-react"
@@ -9936,9 +10015,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'Children.forEach'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-children-for-each"
+        "url": "https://eslint-react.xyz/docs/rules/no-children-for-each"
       },
       "name": "@eslint-react/no-children-for-each",
       "plugin": "@eslint-react"
@@ -9947,9 +10024,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'Children.map'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-children-map"
+        "url": "https://eslint-react.xyz/docs/rules/no-children-map"
       },
       "name": "@eslint-react/no-children-map",
       "plugin": "@eslint-react"
@@ -9958,9 +10033,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'Children.only'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-children-only"
+        "url": "https://eslint-react.xyz/docs/rules/no-children-only"
       },
       "name": "@eslint-react/no-children-only",
       "plugin": "@eslint-react"
@@ -9969,9 +10042,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow passing of 'children' as props",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-children-prop"
+        "url": "https://eslint-react.xyz/docs/rules/no-children-prop"
       },
       "name": "@eslint-react/no-children-prop",
       "plugin": "@eslint-react"
@@ -9980,9 +10051,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'Children.toArray'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-children-to-array"
+        "url": "https://eslint-react.xyz/docs/rules/no-children-to-array"
       },
       "name": "@eslint-react/no-children-to-array",
       "plugin": "@eslint-react"
@@ -9991,7 +10060,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow class component",
-        "url": "https://eslint-react.xyz/rules/no-class-component"
+        "url": "https://eslint-react.xyz/docs/rules/no-class-component"
       },
       "name": "@eslint-react/no-class-component",
       "plugin": "@eslint-react"
@@ -10000,9 +10069,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'cloneElement'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-clone-element"
+        "url": "https://eslint-react.xyz/docs/rules/no-clone-element"
       },
       "name": "@eslint-react/no-clone-element",
       "plugin": "@eslint-react"
@@ -10011,8 +10078,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow comments from being inserted as text nodes",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-comment-textnodes"
+        "url": "https://eslint-react.xyz/docs/rules/no-comment-textnodes"
       },
       "name": "@eslint-react/no-comment-textnodes",
       "plugin": "@eslint-react"
@@ -10022,8 +10088,7 @@
       "deprecated": true,
       "docs": {
         "description": "disallow complicated conditional rendering",
-        "requiresTypeChecking": true,
-        "url": "https://eslint-react.xyz/rules/no-complicated-conditional-rendering"
+        "url": "https://eslint-react.xyz/docs/rules/no-complicated-conditional-rendering"
       },
       "name": "@eslint-react/no-complicated-conditional-rendering",
       "plugin": "@eslint-react"
@@ -10032,9 +10097,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'componentWillMount'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-component-will-mount"
+        "url": "https://eslint-react.xyz/docs/rules/no-component-will-mount"
       },
       "name": "@eslint-react/no-component-will-mount",
       "plugin": "@eslint-react"
@@ -10043,9 +10106,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'componentWillReceiveProps'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-component-will-receive-props"
+        "url": "https://eslint-react.xyz/docs/rules/no-component-will-receive-props"
       },
       "name": "@eslint-react/no-component-will-receive-props",
       "plugin": "@eslint-react"
@@ -10054,9 +10115,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'componentWillUpdate'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-component-will-update"
+        "url": "https://eslint-react.xyz/docs/rules/no-component-will-update"
       },
       "name": "@eslint-react/no-component-will-update",
       "plugin": "@eslint-react"
@@ -10065,20 +10124,25 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'createRef' in function components",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-create-ref"
+        "url": "https://eslint-react.xyz/docs/rules/no-create-ref"
       },
       "name": "@eslint-react/no-create-ref",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-default-props": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow the use of 'defaultProps' property in components",
+        "url": "https://eslint-react.xyz/docs/rules/no-default-props"
+      },
+      "name": "@eslint-react/no-default-props",
       "plugin": "@eslint-react"
     },
     "@eslint-react/no-direct-mutation-state": {
       "type": "problem",
       "docs": {
         "description": "disallow direct mutation of state",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-direct-mutation-state"
+        "url": "https://eslint-react.xyz/docs/rules/no-direct-mutation-state"
       },
       "name": "@eslint-react/no-direct-mutation-state",
       "plugin": "@eslint-react"
@@ -10087,9 +10151,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow duplicate keys in 'key' prop when rendering list",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-duplicate-key"
+        "url": "https://eslint-react.xyz/docs/rules/no-duplicate-key"
       },
       "name": "@eslint-react/no-duplicate-key",
       "plugin": "@eslint-react"
@@ -10099,9 +10161,7 @@
       "deprecated": true,
       "docs": {
         "description": "disallow spreading 'key' from objects.",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-implicit-key"
+        "url": "https://eslint-react.xyz/docs/rules/no-implicit-key"
       },
       "name": "@eslint-react/no-implicit-key",
       "plugin": "@eslint-react"
@@ -10110,9 +10170,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow problematic leaked values from being rendered",
-        "recommended": "recommended",
-        "requiresTypeChecking": true,
-        "url": "https://eslint-react.xyz/rules/no-leaked-conditional-rendering"
+        "url": "https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering"
       },
       "name": "@eslint-react/no-leaked-conditional-rendering",
       "plugin": "@eslint-react"
@@ -10121,8 +10179,7 @@
       "type": "problem",
       "docs": {
         "description": "require 'displayName' for memo and forwardRef components",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-missing-component-display-name"
+        "url": "https://eslint-react.xyz/docs/rules/no-missing-component-display-name"
       },
       "name": "@eslint-react/no-missing-component-display-name",
       "plugin": "@eslint-react"
@@ -10131,9 +10188,7 @@
       "type": "problem",
       "docs": {
         "description": "require 'key' prop when rendering list",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-missing-key"
+        "url": "https://eslint-react.xyz/docs/rules/no-missing-key"
       },
       "name": "@eslint-react/no-missing-key",
       "plugin": "@eslint-react"
@@ -10142,20 +10197,25 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of unstable nested components",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-nested-components"
+        "url": "https://eslint-react.xyz/docs/rules/no-nested-components"
       },
       "name": "@eslint-react/no-nested-components",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/no-prop-types": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow the use of 'propTypes' property in components",
+        "url": "https://eslint-react.xyz/docs/rules/no-prop-types"
+      },
+      "name": "@eslint-react/no-prop-types",
       "plugin": "@eslint-react"
     },
     "@eslint-react/no-redundant-should-component-update": {
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'shouldComponentUpdate' in class component extends 'React.PureComponent'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-redundant-should-component-update"
+        "url": "https://eslint-react.xyz/docs/rules/no-redundant-should-component-update"
       },
       "name": "@eslint-react/no-redundant-should-component-update",
       "plugin": "@eslint-react"
@@ -10164,9 +10224,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'setState' in 'componentDidMount'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-set-state-in-component-did-mount"
+        "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-mount"
       },
       "name": "@eslint-react/no-set-state-in-component-did-mount",
       "plugin": "@eslint-react"
@@ -10175,9 +10233,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'setState' in 'componentDidUpdate'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-set-state-in-component-did-update"
+        "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-update"
       },
       "name": "@eslint-react/no-set-state-in-component-did-update",
       "plugin": "@eslint-react"
@@ -10186,9 +10242,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'setState' in 'componentWillUpdate'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-set-state-in-component-will-update"
+        "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-will-update"
       },
       "name": "@eslint-react/no-set-state-in-component-will-update",
       "plugin": "@eslint-react"
@@ -10197,9 +10251,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow using deprecated string refs",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-string-refs"
+        "url": "https://eslint-react.xyz/docs/rules/no-string-refs"
       },
       "name": "@eslint-react/no-string-refs",
       "plugin": "@eslint-react"
@@ -10208,9 +10260,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'UNSAFE_componentWillMount'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unsafe-component-will-mount"
+        "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-mount"
       },
       "name": "@eslint-react/no-unsafe-component-will-mount",
       "plugin": "@eslint-react"
@@ -10219,9 +10269,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'UNSAFE_componentWillReceiveProps'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unsafe-component-will-receive-props"
+        "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-receive-props"
       },
       "name": "@eslint-react/no-unsafe-component-will-receive-props",
       "plugin": "@eslint-react"
@@ -10230,9 +10278,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of 'UNSAFE_componentWillUpdate'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unsafe-component-will-update"
+        "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-update"
       },
       "name": "@eslint-react/no-unsafe-component-will-update",
       "plugin": "@eslint-react"
@@ -10241,9 +10287,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow passing constructed values to context providers",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unstable-context-value"
+        "url": "https://eslint-react.xyz/docs/rules/no-unstable-context-value"
       },
       "name": "@eslint-react/no-unstable-context-value",
       "plugin": "@eslint-react"
@@ -10252,9 +10296,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of unstable value as default param in function component",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unstable-default-props"
+        "url": "https://eslint-react.xyz/docs/rules/no-unstable-default-props"
       },
       "name": "@eslint-react/no-unstable-default-props",
       "plugin": "@eslint-react"
@@ -10263,9 +10305,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow unused class component members",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unused-class-component-members"
+        "url": "https://eslint-react.xyz/docs/rules/no-unused-class-component-members"
       },
       "name": "@eslint-react/no-unused-class-component-members",
       "plugin": "@eslint-react"
@@ -10273,10 +10313,8 @@
     "@eslint-react/no-unused-state": {
       "type": "problem",
       "docs": {
-        "description": "Prevents unused state of class component.",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-unused-state"
+        "description": "Prevents unused state of class component",
+        "url": "https://eslint-react.xyz/docs/rules/no-unused-state"
       },
       "name": "@eslint-react/no-unused-state",
       "plugin": "@eslint-react"
@@ -10285,9 +10323,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow unnecessary fragments",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/no-useless-fragment"
+        "url": "https://eslint-react.xyz/docs/rules/no-useless-fragment"
       },
       "name": "@eslint-react/no-useless-fragment",
       "plugin": "@eslint-react"
@@ -10296,19 +10332,25 @@
       "type": "problem",
       "docs": {
         "description": "enforce using destructuring assignment in component props and context",
-        "recommended": "recommended",
-        "url": "https://eslint-react.xyz/rules/prefer-destructuring-assignment"
+        "url": "https://eslint-react.xyz/docs/rules/prefer-destructuring-assignment"
       },
       "name": "@eslint-react/prefer-destructuring-assignment",
+      "plugin": "@eslint-react"
+    },
+    "@eslint-react/prefer-read-only-props": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that component props are read-only",
+        "url": "https://eslint-react.xyz/docs/rules/prefer-read-only-props"
+      },
+      "name": "@eslint-react/prefer-read-only-props",
       "plugin": "@eslint-react"
     },
     "@eslint-react/prefer-shorthand-boolean": {
       "type": "problem",
       "docs": {
         "description": "enforce boolean attributes notation in JSX",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/prefer-shorthand-boolean"
+        "url": "https://eslint-react.xyz/docs/rules/prefer-shorthand-boolean"
       },
       "name": "@eslint-react/prefer-shorthand-boolean",
       "plugin": "@eslint-react"
@@ -10317,9 +10359,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce using fragment syntax instead of Fragment component",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/prefer-shorthand-fragment"
+        "url": "https://eslint-react.xyz/docs/rules/prefer-shorthand-fragment"
       },
       "name": "@eslint-react/prefer-shorthand-fragment",
       "plugin": "@eslint-react"
@@ -10328,9 +10368,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow passing 'children' to void DOM elements",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-children-in-void-dom-elements"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-children-in-void-dom-elements"
       },
       "name": "@eslint-react/dom/no-children-in-void-dom-elements",
       "plugin": "@eslint-react/dom"
@@ -10339,9 +10377,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow when a DOM component is using 'dangerouslySetInnerHTML'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-dangerously-set-innerhtml"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml"
       },
       "name": "@eslint-react/dom/no-dangerously-set-innerhtml",
       "plugin": "@eslint-react/dom"
@@ -10350,9 +10386,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow when a DOM component is using both 'children' and 'dangerouslySetInnerHTML'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-dangerously-set-innerhtml-with-children"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml-with-children"
       },
       "name": "@eslint-react/dom/no-dangerously-set-innerhtml-with-children",
       "plugin": "@eslint-react/dom"
@@ -10361,9 +10395,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'findDOMNode'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-find-dom-node"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-find-dom-node"
       },
       "name": "@eslint-react/dom/no-find-dom-node",
       "plugin": "@eslint-react/dom"
@@ -10372,9 +10404,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce that button component have an explicit 'type' attribute",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-missing-button-type"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-missing-button-type"
       },
       "name": "@eslint-react/dom/no-missing-button-type",
       "plugin": "@eslint-react/dom"
@@ -10383,9 +10413,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce that 'iframe' component have an explicit 'sandbox' attribute",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-missing-iframe-sandbox"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-missing-iframe-sandbox"
       },
       "name": "@eslint-react/dom/no-missing-iframe-sandbox",
       "plugin": "@eslint-react/dom"
@@ -10394,7 +10422,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce that namespaces are not used in React elements",
-        "url": "https://eslint-react.xyz/rules/dom-no-namespace"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-namespace"
       },
       "name": "@eslint-react/dom/no-namespace",
       "plugin": "@eslint-react/dom"
@@ -10403,9 +10431,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow usage of the return value of 'ReactDOM.render'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-render-return-value"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-render-return-value"
       },
       "name": "@eslint-react/dom/no-render-return-value",
       "plugin": "@eslint-react/dom"
@@ -10414,9 +10440,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow 'javascript:' URLs as JSX event handler prop's value",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-script-url"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-script-url"
       },
       "name": "@eslint-react/dom/no-script-url",
       "plugin": "@eslint-react/dom"
@@ -10425,9 +10449,7 @@
       "type": "problem",
       "docs": {
         "description": "disallow unsafe iframe 'sandbox' attribute combinations",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-unsafe-iframe-sandbox"
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-unsafe-iframe-sandbox"
       },
       "name": "@eslint-react/dom/no-unsafe-iframe-sandbox",
       "plugin": "@eslint-react/dom"
@@ -10435,10 +10457,8 @@
     "@eslint-react/dom/no-unsafe-target-blank": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'target=\"_blank\"' on an external link without 'rel=\"noreferrer noopener\"'.",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/dom-no-unsafe-target-blank"
+        "description": "disallow 'target=\"_blank\"' on an external link without 'rel=\"noreferrer noopener\"'",
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-unsafe-target-blank"
       },
       "name": "@eslint-react/dom/no-unsafe-target-blank",
       "plugin": "@eslint-react/dom"
@@ -10469,8 +10489,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce custom hooks using other hooks",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/hooks-extra-ensure-custom-hooks-using-other-hooks"
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-ensure-custom-hooks-using-other-hooks"
       },
       "name": "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks",
       "plugin": "@eslint-react/hooks-extra"
@@ -10479,8 +10498,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce 'useCallback' has non-empty dependencies array",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/hooks-extra-ensure-use-callback-has-non-empty-deps"
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-callback-has-non-empty-deps"
       },
       "name": "@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps",
       "plugin": "@eslint-react/hooks-extra"
@@ -10489,18 +10507,34 @@
       "type": "problem",
       "docs": {
         "description": "enforce 'useMemo' has non-empty dependencies array",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/hooks-extra-ensure-use-memo-has-non-empty-deps"
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-ensure-use-memo-has-non-empty-deps"
       },
       "name": "@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps",
+      "plugin": "@eslint-react/hooks-extra"
+    },
+    "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow direct calls to the 'set' function of 'useState' in 'useEffect'",
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect"
+      },
+      "name": "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect",
+      "plugin": "@eslint-react/hooks-extra"
+    },
+    "@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'",
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect"
+      },
+      "name": "@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect",
       "plugin": "@eslint-react/hooks-extra"
     },
     "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": {
       "type": "problem",
       "docs": {
         "description": "disallow function calls in 'useState' that aren't wrapped in an initializer function",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/hooks-extra-prefer-use-state-lazy-initialization"
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization"
       },
       "name": "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization",
       "plugin": "@eslint-react/hooks-extra"
@@ -10509,9 +10543,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce component naming convention to 'PascalCase' or 'CONSTANT_CASE'",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/naming-convention-component-name"
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-component-name"
       },
       "name": "@eslint-react/naming-convention/component-name",
       "plugin": "@eslint-react/naming-convention"
@@ -10520,8 +10552,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce naming convention for JSX filenames",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/naming-convention-filename"
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename"
       },
       "name": "@eslint-react/naming-convention/filename",
       "plugin": "@eslint-react/naming-convention"
@@ -10530,8 +10561,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce naming convention for JSX file extensions",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/naming-convention-filename-extension"
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename-extension"
       },
       "name": "@eslint-react/naming-convention/filename-extension",
       "plugin": "@eslint-react/naming-convention"
@@ -10540,9 +10570,7 @@
       "type": "problem",
       "docs": {
         "description": "enforce destructuring and symmetric naming of 'useState' hook value and setter variables",
-        "recommended": "recommended",
-        "requiresTypeChecking": false,
-        "url": "https://eslint-react.xyz/rules/naming-convention-use-state"
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-use-state"
       },
       "name": "@eslint-react/naming-convention/use-state",
       "plugin": "@eslint-react/naming-convention"
@@ -12148,10 +12176,12 @@
     {
       "filepath": "eslint.config.mjs",
       "globs": [
+        "**/*.mjs",
         "**/*.?([cm])js"
       ],
       "configs": [
-        11
+        2,
+        15
       ]
     },
     {
@@ -12161,8 +12191,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12172,8 +12202,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12183,8 +12213,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12194,8 +12224,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12205,8 +12235,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12216,8 +12246,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12227,8 +12257,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12238,8 +12268,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12249,8 +12279,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12260,8 +12290,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12271,8 +12301,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12282,8 +12312,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12293,8 +12323,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12304,8 +12334,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12315,8 +12345,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12326,8 +12356,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12337,8 +12367,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12348,8 +12378,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12359,8 +12389,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     },
     {
@@ -12370,13 +12400,13 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        10,
-        11
+        14,
+        15
       ]
     }
   ],
   "meta": {
-    "lastUpdate": 1718895867118,
+    "lastUpdate": 1721760392740,
     "basePath": "",
     "configPath": ""
   }
