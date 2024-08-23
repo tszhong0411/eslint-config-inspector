@@ -85,6 +85,7 @@
         "**/test-results/**/",
         "coverage/",
         "**/coverage/**/",
+        "**/src/e2e/.auth/",
         "*.tsbuildinfo",
         "**/*.tsbuildinfo/**",
         "next-env.d.ts",
@@ -127,6 +128,9 @@
           "AbstractRange": false,
           "Accelerometer": false,
           "addEventListener": false,
+          "ai": false,
+          "AI": false,
+          "AITextSession": false,
           "alert": false,
           "AnalyserNode": false,
           "Animation": false,
@@ -196,6 +200,7 @@
           "CDATASection": false,
           "ChannelMergerNode": false,
           "ChannelSplitterNode": false,
+          "ChapterInformation": false,
           "CharacterBoundsUpdateEvent": false,
           "CharacterData": false,
           "clearInterval": false,
@@ -260,6 +265,7 @@
           "CSSNamespaceRule": false,
           "CSSNumericArray": false,
           "CSSNumericValue": false,
+          "CSSPageDescriptors": false,
           "CSSPageRule": false,
           "CSSPerspective": false,
           "CSSPositionTryDescriptors": false,
@@ -2027,6 +2033,7 @@
         "react-hooks": {},
         "@eslint-react/hooks-extra": {},
         "@eslint-react/naming-convention": {},
+        "@eslint-react/web-api": {},
         "jsx-a11y": {}
       },
       "files": [
@@ -2089,6 +2096,10 @@
         "@eslint-react/dom/no-script-url": "warn",
         "@eslint-react/dom/no-unsafe-iframe-sandbox": "warn",
         "@eslint-react/dom/no-unsafe-target-blank": "warn",
+        "@eslint-react/web-api/no-leaked-event-listener": "warn",
+        "@eslint-react/web-api/no-leaked-interval": "warn",
+        "@eslint-react/web-api/no-leaked-timeout": "warn",
+        "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
         "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
         "@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect": "warn",
         "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "error",
@@ -2200,7 +2211,6 @@
         "jsx-a11y/tabindex-no-positive": "error",
         "@eslint-react/no-missing-component-display-name": "error",
         "@eslint-react/no-class-component": "error",
-        "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
         "@eslint-react/naming-convention/component-name": "error",
         "@eslint-react/naming-convention/filename": [
           "error",
@@ -5672,8 +5682,8 @@
       "docs": {
         "description": "Disallow unused variables",
         "recommended": "recommended",
-        "extendsBaseRule": false,
-        "url": "https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md"
+        "extendsBaseRule": true,
+        "url": "https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-vars.md"
       },
       "fixable": "code",
       "name": "unused-imports/no-unused-vars",
@@ -5684,7 +5694,7 @@
       "docs": {
         "description": "Disallow unused variables",
         "recommended": "recommended",
-        "extendsBaseRule": false,
+        "extendsBaseRule": true,
         "url": "https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md"
       },
       "fixable": "code",
@@ -9328,10 +9338,9 @@
       "docs": {
         "description": "Disallow unused variables",
         "recommended": "recommended",
-        "extendsBaseRule": false,
-        "url": "https://github.com/sweepline/eslint-plugin-unused-imports/blob/master/docs/rules/no-unused-imports.md"
+        "extendsBaseRule": true,
+        "url": "https://typescript-eslint.io/rules/no-unused-vars"
       },
-      "fixable": "code",
       "name": "@typescript-eslint/no-unused-vars",
       "plugin": "@typescript-eslint"
     },
@@ -9960,7 +9969,7 @@
     "@eslint-react/avoid-shorthand-boolean": {
       "type": "problem",
       "docs": {
-        "description": "enforce boolean attributes notation in JSX",
+        "description": "disallow using shorthand boolean attributes",
         "url": "https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean"
       },
       "name": "@eslint-react/avoid-shorthand-boolean",
@@ -9969,7 +9978,7 @@
     "@eslint-react/avoid-shorthand-fragment": {
       "type": "problem",
       "docs": {
-        "description": "enforce using fragment component instead of shorthand fragment syntax",
+        "description": "disallow using shorthand fragment syntax",
         "url": "https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment"
       },
       "name": "@eslint-react/avoid-shorthand-fragment",
@@ -9978,7 +9987,7 @@
     "@eslint-react/ensure-forward-ref-using-ref": {
       "type": "problem",
       "docs": {
-        "description": "require all 'forwardRef' components include a 'ref' parameter",
+        "description": "require a 'ref' parameter to be set when using 'forwardRef'",
         "url": "https://eslint-react.xyz/docs/rules/ensure-forward-ref-using-ref"
       },
       "name": "@eslint-react/ensure-forward-ref-using-ref",
@@ -9996,7 +10005,7 @@
     "@eslint-react/no-array-index-key": {
       "type": "problem",
       "docs": {
-        "description": "disallow using Array index as key",
+        "description": "disallow using Array index as 'key'",
         "url": "https://eslint-react.xyz/docs/rules/no-array-index-key"
       },
       "name": "@eslint-react/no-array-index-key",
@@ -10005,7 +10014,7 @@
     "@eslint-react/no-children-count": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'Children.count'",
+        "description": "disallow using 'Children.count'",
         "url": "https://eslint-react.xyz/docs/rules/no-children-count"
       },
       "name": "@eslint-react/no-children-count",
@@ -10014,7 +10023,7 @@
     "@eslint-react/no-children-for-each": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'Children.forEach'",
+        "description": "disallow using 'Children.forEach'",
         "url": "https://eslint-react.xyz/docs/rules/no-children-for-each"
       },
       "name": "@eslint-react/no-children-for-each",
@@ -10023,7 +10032,7 @@
     "@eslint-react/no-children-map": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'Children.map'",
+        "description": "disallow using 'Children.map'",
         "url": "https://eslint-react.xyz/docs/rules/no-children-map"
       },
       "name": "@eslint-react/no-children-map",
@@ -10032,7 +10041,7 @@
     "@eslint-react/no-children-only": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'Children.only'",
+        "description": "disallow using 'Children.only'",
         "url": "https://eslint-react.xyz/docs/rules/no-children-only"
       },
       "name": "@eslint-react/no-children-only",
@@ -10041,7 +10050,7 @@
     "@eslint-react/no-children-prop": {
       "type": "problem",
       "docs": {
-        "description": "disallow passing of 'children' as props",
+        "description": "disallow passing 'children' as props",
         "url": "https://eslint-react.xyz/docs/rules/no-children-prop"
       },
       "name": "@eslint-react/no-children-prop",
@@ -10050,7 +10059,7 @@
     "@eslint-react/no-children-to-array": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'Children.toArray'",
+        "description": "disallow using 'Children.toArray'",
         "url": "https://eslint-react.xyz/docs/rules/no-children-to-array"
       },
       "name": "@eslint-react/no-children-to-array",
@@ -10059,7 +10068,7 @@
     "@eslint-react/no-class-component": {
       "type": "problem",
       "docs": {
-        "description": "disallow class component",
+        "description": "disallow using class components",
         "url": "https://eslint-react.xyz/docs/rules/no-class-component"
       },
       "name": "@eslint-react/no-class-component",
@@ -10068,7 +10077,7 @@
     "@eslint-react/no-clone-element": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'cloneElement'",
+        "description": "disallow using 'cloneElement'",
         "url": "https://eslint-react.xyz/docs/rules/no-clone-element"
       },
       "name": "@eslint-react/no-clone-element",
@@ -10083,12 +10092,20 @@
       "name": "@eslint-react/no-comment-textnodes",
       "plugin": "@eslint-react"
     },
+    "@eslint-react/no-complex-conditional-rendering": {
+      "type": "problem",
+      "docs": {
+        "description": "disallow complex conditional rendering",
+        "url": "https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering"
+      },
+      "name": "@eslint-react/no-complex-conditional-rendering",
+      "plugin": "@eslint-react"
+    },
     "@eslint-react/no-complicated-conditional-rendering": {
       "type": "problem",
-      "deprecated": true,
       "docs": {
-        "description": "disallow complicated conditional rendering",
-        "url": "https://eslint-react.xyz/docs/rules/no-complicated-conditional-rendering"
+        "description": "disallow complex conditional rendering",
+        "url": "https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering"
       },
       "name": "@eslint-react/no-complicated-conditional-rendering",
       "plugin": "@eslint-react"
@@ -10096,7 +10113,7 @@
     "@eslint-react/no-component-will-mount": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'componentWillMount'",
+        "description": "disallow using 'componentWillMount'",
         "url": "https://eslint-react.xyz/docs/rules/no-component-will-mount"
       },
       "name": "@eslint-react/no-component-will-mount",
@@ -10105,7 +10122,7 @@
     "@eslint-react/no-component-will-receive-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'componentWillReceiveProps'",
+        "description": "disallow using 'componentWillReceiveProps'",
         "url": "https://eslint-react.xyz/docs/rules/no-component-will-receive-props"
       },
       "name": "@eslint-react/no-component-will-receive-props",
@@ -10114,7 +10131,7 @@
     "@eslint-react/no-component-will-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'componentWillUpdate'",
+        "description": "disallow using 'componentWillReceiveProps'",
         "url": "https://eslint-react.xyz/docs/rules/no-component-will-update"
       },
       "name": "@eslint-react/no-component-will-update",
@@ -10123,7 +10140,7 @@
     "@eslint-react/no-create-ref": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'createRef' in function components",
+        "description": "disallow using 'createRef' in function components",
         "url": "https://eslint-react.xyz/docs/rules/no-create-ref"
       },
       "name": "@eslint-react/no-create-ref",
@@ -10132,7 +10149,7 @@
     "@eslint-react/no-default-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow the use of 'defaultProps' property in components",
+        "description": "disallow using 'defaultProps' property in components",
         "url": "https://eslint-react.xyz/docs/rules/no-default-props"
       },
       "name": "@eslint-react/no-default-props",
@@ -10150,7 +10167,7 @@
     "@eslint-react/no-duplicate-key": {
       "type": "problem",
       "docs": {
-        "description": "disallow duplicate keys in 'key' prop when rendering list",
+        "description": "disallow duplicate keys when rendering list",
         "url": "https://eslint-react.xyz/docs/rules/no-duplicate-key"
       },
       "name": "@eslint-react/no-duplicate-key",
@@ -10158,9 +10175,8 @@
     },
     "@eslint-react/no-implicit-key": {
       "type": "problem",
-      "deprecated": true,
       "docs": {
-        "description": "disallow spreading 'key' from objects.",
+        "description": "disallow implicit 'key' props",
         "url": "https://eslint-react.xyz/docs/rules/no-implicit-key"
       },
       "name": "@eslint-react/no-implicit-key",
@@ -10178,7 +10194,7 @@
     "@eslint-react/no-missing-component-display-name": {
       "type": "problem",
       "docs": {
-        "description": "require 'displayName' for memo and forwardRef components",
+        "description": "require 'displayName' for 'memo' and 'forwardRef' components",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-component-display-name"
       },
       "name": "@eslint-react/no-missing-component-display-name",
@@ -10187,7 +10203,7 @@
     "@eslint-react/no-missing-key": {
       "type": "problem",
       "docs": {
-        "description": "require 'key' prop when rendering list",
+        "description": "require 'key' when rendering list",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-key"
       },
       "name": "@eslint-react/no-missing-key",
@@ -10196,7 +10212,7 @@
     "@eslint-react/no-nested-components": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of unstable nested components",
+        "description": "disallow using unstable nested components",
         "url": "https://eslint-react.xyz/docs/rules/no-nested-components"
       },
       "name": "@eslint-react/no-nested-components",
@@ -10205,7 +10221,7 @@
     "@eslint-react/no-prop-types": {
       "type": "problem",
       "docs": {
-        "description": "disallow the use of 'propTypes' property in components",
+        "description": "disallow using 'propTypes' property in components",
         "url": "https://eslint-react.xyz/docs/rules/no-prop-types"
       },
       "name": "@eslint-react/no-prop-types",
@@ -10214,7 +10230,7 @@
     "@eslint-react/no-redundant-should-component-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'shouldComponentUpdate' in class component extends 'React.PureComponent'",
+        "description": "disallow using 'shouldComponentUpdate' in class component extends 'React.PureComponent'",
         "url": "https://eslint-react.xyz/docs/rules/no-redundant-should-component-update"
       },
       "name": "@eslint-react/no-redundant-should-component-update",
@@ -10223,7 +10239,7 @@
     "@eslint-react/no-set-state-in-component-did-mount": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'setState' in 'componentDidMount'",
+        "description": "disallow using 'setState' in 'componentDidMount'",
         "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-mount"
       },
       "name": "@eslint-react/no-set-state-in-component-did-mount",
@@ -10232,7 +10248,7 @@
     "@eslint-react/no-set-state-in-component-did-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'setState' in 'componentDidUpdate'",
+        "description": "disallow using 'setState' in 'componentDidUpdate'",
         "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-update"
       },
       "name": "@eslint-react/no-set-state-in-component-did-update",
@@ -10241,7 +10257,7 @@
     "@eslint-react/no-set-state-in-component-will-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'setState' in 'componentWillUpdate'",
+        "description": "disallow using 'setState' in 'componentWillUpdate'",
         "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-will-update"
       },
       "name": "@eslint-react/no-set-state-in-component-will-update",
@@ -10259,7 +10275,7 @@
     "@eslint-react/no-unsafe-component-will-mount": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'UNSAFE_componentWillMount'",
+        "description": "disallow using 'UNSAFE_componentWillMount'",
         "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-mount"
       },
       "name": "@eslint-react/no-unsafe-component-will-mount",
@@ -10268,7 +10284,7 @@
     "@eslint-react/no-unsafe-component-will-receive-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'UNSAFE_componentWillReceiveProps'",
+        "description": "disallow using 'UNSAFE_componentWillReceiveProps'",
         "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-receive-props"
       },
       "name": "@eslint-react/no-unsafe-component-will-receive-props",
@@ -10277,7 +10293,7 @@
     "@eslint-react/no-unsafe-component-will-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of 'UNSAFE_componentWillUpdate'",
+        "description": "disallow using 'UNSAFE_componentWillUpdate'",
         "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-update"
       },
       "name": "@eslint-react/no-unsafe-component-will-update",
@@ -10295,7 +10311,7 @@
     "@eslint-react/no-unstable-default-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of unstable value as default param in function component",
+        "description": "disallow using unstable value as default param in function component",
         "url": "https://eslint-react.xyz/docs/rules/no-unstable-default-props"
       },
       "name": "@eslint-react/no-unstable-default-props",
@@ -10313,7 +10329,7 @@
     "@eslint-react/no-unused-state": {
       "type": "problem",
       "docs": {
-        "description": "Prevents unused state of class component",
+        "description": "disallow unused state of class component",
         "url": "https://eslint-react.xyz/docs/rules/no-unused-state"
       },
       "name": "@eslint-react/no-unused-state",
@@ -10340,7 +10356,7 @@
     "@eslint-react/prefer-read-only-props": {
       "type": "problem",
       "docs": {
-        "description": "enforce that component props are read-only",
+        "description": "enforce read-only props in components",
         "url": "https://eslint-react.xyz/docs/rules/prefer-read-only-props"
       },
       "name": "@eslint-react/prefer-read-only-props",
@@ -10349,7 +10365,7 @@
     "@eslint-react/prefer-shorthand-boolean": {
       "type": "problem",
       "docs": {
-        "description": "enforce boolean attributes notation in JSX",
+        "description": "enforce using shorthand boolean attributes",
         "url": "https://eslint-react.xyz/docs/rules/prefer-shorthand-boolean"
       },
       "name": "@eslint-react/prefer-shorthand-boolean",
@@ -10358,7 +10374,7 @@
     "@eslint-react/prefer-shorthand-fragment": {
       "type": "problem",
       "docs": {
-        "description": "enforce using fragment syntax instead of Fragment component",
+        "description": "enforce using fragment syntax instead of 'Fragment' component",
         "url": "https://eslint-react.xyz/docs/rules/prefer-shorthand-fragment"
       },
       "name": "@eslint-react/prefer-shorthand-fragment",
@@ -10574,6 +10590,33 @@
       },
       "name": "@eslint-react/naming-convention/use-state",
       "plugin": "@eslint-react/naming-convention"
+    },
+    "@eslint-react/web-api/no-leaked-event-listener": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that every 'addEventListener' in a component or custom hook has a corresponding 'removeEventListener'.",
+        "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-event-listener"
+      },
+      "name": "@eslint-react/web-api/no-leaked-event-listener",
+      "plugin": "@eslint-react/web-api"
+    },
+    "@eslint-react/web-api/no-leaked-interval": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that every 'setInterval' in a component or custom hook has a corresponding 'clearInterval'.",
+        "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-interval"
+      },
+      "name": "@eslint-react/web-api/no-leaked-interval",
+      "plugin": "@eslint-react/web-api"
+    },
+    "@eslint-react/web-api/no-leaked-timeout": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce that every 'setTimeout' in a component or custom hook has a corresponding 'clearTimeout'.",
+        "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-timeout"
+      },
+      "name": "@eslint-react/web-api/no-leaked-timeout",
+      "plugin": "@eslint-react/web-api"
     },
     "jsx-a11y/accessible-emoji": {
       "docs": {
@@ -10899,7 +10942,7 @@
         "description": "Do not allow the use of `process.env` without including the env key in any turbo.json",
         "category": "Configuration Issues",
         "recommended": true,
-        "url": "https://github.com/vercel/turbo/tree/main/packages/eslint-plugin-turbo/docs/rules/no-undeclared-env-vars.md"
+        "url": "https://github.com/vercel/turborepo/tree/main/packages/eslint-plugin-turbo/docs/rules/no-undeclared-env-vars.md"
       },
       "name": "turbo/no-undeclared-env-vars",
       "plugin": "turbo"
@@ -12406,7 +12449,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1724185677629,
+    "lastUpdate": 1724447539599,
     "basePath": "",
     "configPath": ""
   }
