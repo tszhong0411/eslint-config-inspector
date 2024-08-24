@@ -2029,11 +2029,12 @@
       "name": "tszhong0411:react",
       "plugins": {
         "@eslint-react": {},
+        "@eslint-react/debug": {},
         "@eslint-react/dom": {},
-        "react-hooks": {},
         "@eslint-react/hooks-extra": {},
         "@eslint-react/naming-convention": {},
         "@eslint-react/web-api": {},
+        "react-hooks": {},
         "jsx-a11y": {}
       },
       "files": [
@@ -2053,6 +2054,8 @@
         }
       },
       "rules": {
+        "@eslint-react/avoid-shorthand-boolean": "off",
+        "@eslint-react/avoid-shorthand-fragment": "off",
         "@eslint-react/ensure-forward-ref-using-ref": "warn",
         "@eslint-react/no-access-state-in-setstate": "error",
         "@eslint-react/no-array-index-key": "warn",
@@ -2060,9 +2063,12 @@
         "@eslint-react/no-children-for-each": "warn",
         "@eslint-react/no-children-map": "warn",
         "@eslint-react/no-children-only": "warn",
+        "@eslint-react/no-children-prop": "warn",
         "@eslint-react/no-children-to-array": "warn",
+        "@eslint-react/no-class-component": "warn",
         "@eslint-react/no-clone-element": "warn",
         "@eslint-react/no-comment-textnodes": "warn",
+        "@eslint-react/no-complex-conditional-rendering": "warn",
         "@eslint-react/no-component-will-mount": "error",
         "@eslint-react/no-component-will-receive-props": "error",
         "@eslint-react/no-component-will-update": "error",
@@ -2070,6 +2076,8 @@
         "@eslint-react/no-default-props": "error",
         "@eslint-react/no-direct-mutation-state": "error",
         "@eslint-react/no-duplicate-key": "error",
+        "@eslint-react/no-implicit-key": "warn",
+        "@eslint-react/no-missing-component-display-name": "warn",
         "@eslint-react/no-missing-key": "error",
         "@eslint-react/no-nested-components": "warn",
         "@eslint-react/no-prop-types": "error",
@@ -2085,6 +2093,10 @@
         "@eslint-react/no-unstable-default-props": "error",
         "@eslint-react/no-unused-class-component-members": "warn",
         "@eslint-react/no-unused-state": "warn",
+        "@eslint-react/no-useless-fragment": "warn",
+        "@eslint-react/prefer-destructuring-assignment": "warn",
+        "@eslint-react/prefer-shorthand-boolean": "warn",
+        "@eslint-react/prefer-shorthand-fragment": "warn",
         "@eslint-react/dom/no-children-in-void-dom-elements": "warn",
         "@eslint-react/dom/no-dangerously-set-innerhtml": "off",
         "@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "error",
@@ -2099,11 +2111,21 @@
         "@eslint-react/web-api/no-leaked-event-listener": "warn",
         "@eslint-react/web-api/no-leaked-interval": "warn",
         "@eslint-react/web-api/no-leaked-timeout": "warn",
-        "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": "error",
+        "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": "warn",
+        "@eslint-react/hooks-extra/ensure-use-callback-has-non-empty-deps": "warn",
+        "@eslint-react/hooks-extra/ensure-use-memo-has-non-empty-deps": "warn",
         "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
         "@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect": "warn",
-        "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "error",
-        "@eslint-react/no-leaked-conditional-rendering": "warn",
+        "@eslint-react/hooks-extra/prefer-use-state-lazy-initialization": "warn",
+        "@eslint-react/naming-convention/component-name": "warn",
+        "@eslint-react/naming-convention/filename": [
+          "error",
+          {
+            "rule": "kebab-case"
+          }
+        ],
+        "@eslint-react/naming-convention/filename-extension": "warn",
+        "@eslint-react/naming-convention/use-state": "warn",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "jsx-a11y/alt-text": [
@@ -2209,17 +2231,11 @@
         "jsx-a11y/role-supports-aria-props": "error",
         "jsx-a11y/scope": "error",
         "jsx-a11y/tabindex-no-positive": "error",
-        "@eslint-react/no-missing-component-display-name": "error",
-        "@eslint-react/no-class-component": "error",
-        "@eslint-react/naming-convention/component-name": "error",
-        "@eslint-react/naming-convention/filename": [
-          "error",
-          {
-            "rule": "kebab-case"
-          }
-        ],
-        "@eslint-react/naming-convention/use-state": "error",
-        "jsx-a11y/lang": "error"
+        "@eslint-react/no-complicated-conditional-rendering": "error",
+        "@eslint-react/no-leaked-conditional-rendering": "error",
+        "jsx-a11y/lang": "error",
+        "jsx-a11y/no-aria-hidden-on-focusable": "error",
+        "jsx-a11y/prefer-tag-over-role": "error"
       },
       "settings": {
         "jsx-a11y": {
@@ -2230,6 +2246,16 @@
             "Textarea": "textarea",
             "Link": "a"
           }
+        },
+        "react-x": {
+          "additionalHooks": {
+            "useLayoutEffect": [
+              "useIsomorphicLayoutEffect"
+            ]
+          },
+          "polymorphicPropName": "as",
+          "skipImportCheck": false,
+          "version": "detect"
         }
       },
       "index": 15
@@ -10380,6 +10406,42 @@
       "name": "@eslint-react/prefer-shorthand-fragment",
       "plugin": "@eslint-react"
     },
+    "@eslint-react/debug/class-component": {
+      "type": "problem",
+      "docs": {
+        "description": "report all class components, including anonymous ones",
+        "url": "https://eslint-react.xyz/docs/rules/debug-class-component"
+      },
+      "name": "@eslint-react/debug/class-component",
+      "plugin": "@eslint-react/debug"
+    },
+    "@eslint-react/debug/function-component": {
+      "type": "problem",
+      "docs": {
+        "description": "report all function components, including anonymous ones",
+        "url": "https://eslint-react.xyz/docs/rules/debug-function-component"
+      },
+      "name": "@eslint-react/debug/function-component",
+      "plugin": "@eslint-react/debug"
+    },
+    "@eslint-react/debug/is-from-react": {
+      "type": "problem",
+      "docs": {
+        "description": "report all identifiers that are initialized from React.",
+        "url": "https://eslint-react.xyz/docs/rules/debug-is-from-react"
+      },
+      "name": "@eslint-react/debug/is-from-react",
+      "plugin": "@eslint-react/debug"
+    },
+    "@eslint-react/debug/react-hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "report all React Hooks",
+        "url": "https://eslint-react.xyz/docs/rules/debug-react-hooks"
+      },
+      "name": "@eslint-react/debug/react-hooks",
+      "plugin": "@eslint-react/debug"
+    },
     "@eslint-react/dom/no-children-in-void-dom-elements": {
       "type": "problem",
       "docs": {
@@ -10478,28 +10540,6 @@
       },
       "name": "@eslint-react/dom/no-unsafe-target-blank",
       "plugin": "@eslint-react/dom"
-    },
-    "react-hooks/rules-of-hooks": {
-      "type": "problem",
-      "docs": {
-        "description": "enforces the Rules of Hooks",
-        "recommended": true,
-        "url": "https://reactjs.org/docs/hooks-rules.html"
-      },
-      "name": "react-hooks/rules-of-hooks",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/exhaustive-deps": {
-      "type": "suggestion",
-      "docs": {
-        "description": "verifies the list of dependencies for Hooks like useEffect and similar",
-        "recommended": true,
-        "url": "https://github.com/facebook/react/issues/14920"
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/exhaustive-deps",
-      "plugin": "react-hooks"
     },
     "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": {
       "type": "problem",
@@ -10617,6 +10657,28 @@
       },
       "name": "@eslint-react/web-api/no-leaked-timeout",
       "plugin": "@eslint-react/web-api"
+    },
+    "react-hooks/rules-of-hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "enforces the Rules of Hooks",
+        "recommended": true,
+        "url": "https://reactjs.org/docs/hooks-rules.html"
+      },
+      "name": "react-hooks/rules-of-hooks",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/exhaustive-deps": {
+      "type": "suggestion",
+      "docs": {
+        "description": "verifies the list of dependencies for Hooks like useEffect and similar",
+        "recommended": true,
+        "url": "https://github.com/facebook/react/issues/14920"
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/exhaustive-deps",
+      "plugin": "react-hooks"
     },
     "jsx-a11y/accessible-emoji": {
       "docs": {
@@ -12449,7 +12511,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1724447539599,
+    "lastUpdate": 1724519508341,
     "basePath": "",
     "configPath": ""
   }
