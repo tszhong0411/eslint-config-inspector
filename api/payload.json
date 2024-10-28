@@ -47,8 +47,16 @@
         "**/.pnp/**/",
         ".pnp.*",
         "**/.pnp.*/**",
-        ".env*",
-        "**/.env*/**",
+        ".env",
+        "**/.env/**",
+        ".env.local",
+        "**/.env.local/**",
+        ".env.development.local",
+        "**/.env.development.local/**",
+        ".env.test.local",
+        "**/.env.test.local/**",
+        ".env.production.local",
+        "**/.env.production.local/**",
         ".turbo/",
         "**/.turbo/**/",
         ".vercel/",
@@ -2094,7 +2102,7 @@
         "@eslint-react/no-unused-class-component-members": "warn",
         "@eslint-react/no-unused-state": "warn",
         "@eslint-react/no-useless-fragment": "warn",
-        "@eslint-react/prefer-destructuring-assignment": "warn",
+        "@eslint-react/prefer-destructuring-assignment": "off",
         "@eslint-react/prefer-shorthand-boolean": "warn",
         "@eslint-react/prefer-shorthand-fragment": "warn",
         "@eslint-react/dom/no-children-in-void-dom-elements": "warn",
@@ -12511,7 +12519,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1724519508341,
+    "lastUpdate": 1730134957100,
     "basePath": "",
     "configPath": ""
   }
