@@ -2358,7 +2358,7 @@
         "@eslint-react/web-api/no-leaked-interval": "warn",
         "@eslint-react/web-api/no-leaked-resize-observer": "warn",
         "@eslint-react/web-api/no-leaked-timeout": "warn",
-        "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "warn",
+        "@eslint-react/hooks-extra/no-direct-set-state-in-use-effect": "off",
         "@eslint-react/hooks-extra/no-direct-set-state-in-use-layout-effect": "warn",
         "@eslint-react/hooks-extra/no-unnecessary-use-callback": "warn",
         "@eslint-react/hooks-extra/no-unnecessary-use-memo": "warn",
@@ -16143,7 +16143,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1735974711407,
+    "lastUpdate": 1736018679855,
     "basePath": "",
     "configPath": ""
   }
