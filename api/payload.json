@@ -1870,7 +1870,9 @@
         "tailwindcss": {
           "callees": [
             "cn",
-            "cva"
+            "clsx",
+            "cva",
+            "tv"
           ]
         }
       },
@@ -16122,7 +16124,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1736786728419,
+    "lastUpdate": 1736870916260,
     "basePath": "",
     "configPath": ""
   }
