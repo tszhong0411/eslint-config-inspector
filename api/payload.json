@@ -2301,7 +2301,7 @@
       "rules": {
         "@eslint-react/ensure-forward-ref-using-ref": "warn",
         "@eslint-react/no-access-state-in-setstate": "error",
-        "@eslint-react/no-array-index-key": "warn",
+        "@eslint-react/no-array-index-key": "off",
         "@eslint-react/no-children-count": "warn",
         "@eslint-react/no-children-for-each": "warn",
         "@eslint-react/no-children-map": "warn",
@@ -16124,7 +16124,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1736870916260,
+    "lastUpdate": 1737114095951,
     "basePath": "",
     "configPath": ""
   }
