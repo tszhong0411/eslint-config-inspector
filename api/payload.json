@@ -1507,7 +1507,7 @@
         "unicorn/prefer-set-has": "error",
         "unicorn/prefer-set-size": "error",
         "unicorn/prefer-spread": "error",
-        "unicorn/prefer-string-raw": "error",
+        "unicorn/prefer-string-raw": "off",
         "unicorn/prefer-string-replace-all": "error",
         "unicorn/prefer-string-slice": "error",
         "unicorn/prefer-string-starts-ends-with": "error",
@@ -1556,13 +1556,26 @@
           {
             "groups": [
               [
+                "^.*\\u0000$",
+                "^node:.*\\u0000$",
+                "^@?\\w.*\\u0000$",
+                "^\\.\\..*\\u0000$",
+                "^\\..*\\u0000$"
+              ],
+              [
+                "^\\u0000"
+              ],
+              [
+                "^node:"
+              ],
+              [
                 "^@?\\w"
               ],
               [
-                "^[\\w]"
+                "^[^.]"
               ],
               [
-                "^"
+                "^\\.\\."
               ],
               [
                 "^\\."
@@ -16159,7 +16172,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1737449092826,
+    "lastUpdate": 1737531469102,
     "basePath": "",
     "configPath": ""
   }
