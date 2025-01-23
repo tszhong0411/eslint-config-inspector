@@ -2528,7 +2528,6 @@
         "jsx-a11y/role-supports-aria-props": "error",
         "jsx-a11y/scope": "error",
         "jsx-a11y/tabindex-no-positive": "error",
-        "@eslint-react/no-complicated-conditional-rendering": "error",
         "@eslint-react/no-leaked-conditional-rendering": "error",
         "@eslint-react/avoid-shorthand-boolean": "off",
         "@eslint-react/avoid-shorthand-fragment": "off",
@@ -16172,7 +16171,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1737531469102,
+    "lastUpdate": 1737629876519,
     "basePath": "",
     "configPath": ""
   }
