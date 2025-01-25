@@ -1666,7 +1666,7 @@
         "sonarjs/no-ignored-return": "error",
         "sonarjs/no-wildcard-import": "off",
         "sonarjs/arguments-order": "error",
-        "sonarjs/pseudo-random": "error",
+        "sonarjs/pseudo-random": "off",
         "sonarjs/for-loop-increment-sign": "error",
         "sonarjs/cookies": "off",
         "sonarjs/null-dereference": "error",
@@ -2324,7 +2324,7 @@
         "@eslint-react/no-class-component": "warn",
         "@eslint-react/no-clone-element": "warn",
         "@eslint-react/no-comment-textnodes": "warn",
-        "@eslint-react/no-complex-conditional-rendering": "warn",
+        "@eslint-react/no-complex-conditional-rendering": "off",
         "@eslint-react/no-component-will-mount": "error",
         "@eslint-react/no-component-will-receive-props": "error",
         "@eslint-react/no-component-will-update": "error",
@@ -16171,7 +16171,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1737629876519,
+    "lastUpdate": 1737769559742,
     "basePath": "",
     "configPath": ""
   }
