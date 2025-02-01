@@ -63,7 +63,6 @@
         "**/build/",
         "**/dist/",
         "**/.eslint-config-inspector/",
-        "**/volumes/",
         "**/.mdx/",
         "**/playwright-report/",
         "**/test-results/",
@@ -1865,33 +1864,6 @@
       "index": 10
     },
     {
-      "name": "tszhong0411:tailwindcss",
-      "plugins": {
-        "tailwindcss": {}
-      },
-      "rules": {
-        "tailwindcss/classnames-order": "off",
-        "tailwindcss/enforces-negative-arbitrary-values": "warn",
-        "tailwindcss/enforces-shorthand": "warn",
-        "tailwindcss/migration-from-tailwind-2": "warn",
-        "tailwindcss/no-arbitrary-value": "off",
-        "tailwindcss/no-custom-classname": "off",
-        "tailwindcss/no-contradicting-classname": "error",
-        "tailwindcss/no-unnecessary-arbitrary-value": "warn"
-      },
-      "settings": {
-        "tailwindcss": {
-          "callees": [
-            "cn",
-            "clsx",
-            "cva",
-            "tv"
-          ]
-        }
-      },
-      "index": 11
-    },
-    {
       "name": "tszhong0411:imports",
       "plugins": {
         "import": {}
@@ -1912,7 +1884,7 @@
           }
         ]
       },
-      "index": 12
+      "index": 11
     },
     {
       "name": "tszhong0411:prettier",
@@ -2102,7 +2074,7 @@
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off"
       },
-      "index": 13
+      "index": 12
     },
     {
       "name": "tszhong0411:typescript",
@@ -2281,7 +2253,7 @@
           }
         ]
       },
-      "index": 14
+      "index": 13
     },
     {
       "name": "tszhong0411:react",
@@ -2555,7 +2527,7 @@
           "version": "detect"
         }
       },
-      "index": 15
+      "index": 14
     },
     {
       "name": "tszhong0411:turbo",
@@ -2565,7 +2537,7 @@
       "rules": {
         "turbo/no-undeclared-env-vars": "error"
       },
-      "index": 16
+      "index": 15
     },
     {
       "name": "tszhong0411:next",
@@ -2595,7 +2567,7 @@
         "@next/next/no-head-import-in-document": "error",
         "@next/next/no-script-component-in-head": "error"
       },
-      "index": 17
+      "index": 16
     },
     {
       "name": "tszhong0411:playwright",
@@ -2696,7 +2668,7 @@
       "files": [
         "**/e2e/**/*.{test,spec}.?([cm])[jt]s?(x)"
       ],
-      "index": 18
+      "index": 17
     },
     {
       "name": "tszhong0411:testing-library",
@@ -2745,7 +2717,7 @@
       "files": [
         "**/tests/**/*.{test,spec}.?([cm])[jt]s?(x)"
       ],
-      "index": 19
+      "index": 18
     }
   ],
   "rules": {
@@ -2831,6 +2803,7 @@
       "docs": {
         "description": "Require braces around arrow function bodies",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/arrow-body-style"
       },
       "fixable": "code",
@@ -2925,6 +2898,7 @@
       "docs": {
         "description": "Enforce camelcase naming convention",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/camelcase"
       },
       "name": "camelcase",
@@ -2935,6 +2909,7 @@
       "docs": {
         "description": "Enforce or disallow capitalization of the first letter of a comment",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/capitalized-comments"
       },
       "fixable": "code",
@@ -3042,6 +3017,7 @@
       "docs": {
         "description": "Enforce consistent naming when capturing the current execution context",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/consistent-this"
       },
       "defaultOptions": [
@@ -3065,6 +3041,7 @@
       "docs": {
         "description": "Enforce consistent brace style for all control statements",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/curly"
       },
       "defaultOptions": [
@@ -3090,7 +3067,7 @@
     "default-case-last": {
       "type": "suggestion",
       "docs": {
-        "description": "Enforce `default` clauses in switch statements to be last",
+        "description": "Enforce `default` clauses in `switch` statements to be last",
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/default-case-last"
       },
@@ -3102,6 +3079,7 @@
       "docs": {
         "description": "Enforce default parameters to be last",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/default-param-last"
       },
       "name": "default-param-last",
@@ -3131,6 +3109,7 @@
       "docs": {
         "description": "Enforce dot notation whenever possible",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/dot-notation"
       },
       "fixable": "code",
@@ -3190,6 +3169,7 @@
       "docs": {
         "description": "Require function names to match the name of the variable or property to which they are assigned",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/func-name-matching"
       },
       "name": "func-name-matching",
@@ -3221,6 +3201,7 @@
       "docs": {
         "description": "Enforce the consistent use of either `function` declarations or expressions assigned to variables",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/func-style"
       },
       "name": "func-style",
@@ -3348,6 +3329,7 @@
       "docs": {
         "description": "Disallow specified identifiers",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/id-denylist"
       },
       "name": "id-denylist",
@@ -3366,6 +3348,7 @@
       "docs": {
         "description": "Enforce minimum and maximum identifier lengths",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/id-length"
       },
       "name": "id-length",
@@ -3385,6 +3368,7 @@
       "docs": {
         "description": "Require identifiers to match a specified regular expression",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/id-match"
       },
       "name": "id-match",
@@ -3436,6 +3420,7 @@
       "docs": {
         "description": "Require or disallow initialization in variable declarations",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/init-declarations"
       },
       "name": "init-declarations",
@@ -3551,6 +3536,7 @@
       "docs": {
         "description": "Require or disallow logical assignment operator shorthand",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/logical-assignment-operators"
       },
       "fixable": "code",
@@ -3982,6 +3968,7 @@
       "docs": {
         "description": "Disallow `continue` statements",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-continue"
       },
       "name": "no-continue",
@@ -4023,6 +4010,7 @@
       "docs": {
         "description": "Disallow equal signs explicitly at the beginning of regular expressions",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-div-regex"
       },
       "fixable": "code",
@@ -4104,6 +4092,7 @@
       "docs": {
         "description": "Disallow `else` blocks after `return` statements in `if` statements",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-else-return"
       },
       "fixable": "code",
@@ -4245,6 +4234,7 @@
       "docs": {
         "description": "Disallow unnecessary boolean casts",
         "recommended": true,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-extra-boolean-cast"
       },
       "fixable": "code",
@@ -4256,6 +4246,7 @@
       "docs": {
         "description": "Disallow unnecessary labels",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-extra-label"
       },
       "fixable": "code",
@@ -4348,6 +4339,7 @@
       "docs": {
         "description": "Disallow shorthand type conversions",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-implicit-coercion"
       },
       "fixable": "code",
@@ -4406,6 +4398,7 @@
       "docs": {
         "description": "Disallow inline comments after code",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-inline-comments"
       },
       "name": "no-inline-comments",
@@ -4489,6 +4482,7 @@
       "docs": {
         "description": "Disallow labels that share a name with a variable",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-label-var"
       },
       "name": "no-label-var",
@@ -4505,6 +4499,7 @@
       "docs": {
         "description": "Disallow labeled statements",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-labels"
       },
       "name": "no-labels",
@@ -4525,6 +4520,7 @@
       "docs": {
         "description": "Disallow `if` statements as the only statement in `else` blocks",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-lonely-if"
       },
       "fixable": "code",
@@ -4556,6 +4552,7 @@
       "docs": {
         "description": "Disallow magic numbers",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-magic-numbers"
       },
       "name": "no-magic-numbers",
@@ -4641,6 +4638,7 @@
       "docs": {
         "description": "Disallow multiline strings",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-multi-str"
       },
       "name": "no-multi-str",
@@ -4678,6 +4676,7 @@
       "docs": {
         "description": "Disallow negated conditions",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-negated-condition"
       },
       "name": "no-negated-condition",
@@ -4702,6 +4701,7 @@
       "docs": {
         "description": "Disallow nested ternary expressions",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-nested-ternary"
       },
       "name": "no-nested-ternary",
@@ -4871,6 +4871,7 @@
       "docs": {
         "description": "Disallow the unary operators `++` and `--`",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-plusplus"
       },
       "name": "no-plusplus",
@@ -5204,6 +5205,7 @@
       "docs": {
         "description": "Disallow ternary operators",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-ternary"
       },
       "name": "no-ternary",
@@ -5262,6 +5264,7 @@
       "docs": {
         "description": "Disallow initializing variables to `undefined`",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-undef-init"
       },
       "fixable": "code",
@@ -5273,6 +5276,7 @@
       "docs": {
         "description": "Disallow the use of `undefined` as an identifier",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-undefined"
       },
       "name": "no-undefined",
@@ -5296,6 +5300,7 @@
       "docs": {
         "description": "Disallow dangling underscores in identifiers",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-underscore-dangle"
       },
       "name": "no-underscore-dangle",
@@ -5331,6 +5336,7 @@
       "docs": {
         "description": "Disallow ternary operators when simpler alternatives exist",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-unneeded-ternary"
       },
       "fixable": "code",
@@ -5523,6 +5529,7 @@
       "docs": {
         "description": "Disallow unnecessary computed property keys in objects and classes",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-useless-computed-key"
       },
       "fixable": "code",
@@ -5534,6 +5541,7 @@
       "docs": {
         "description": "Disallow unnecessary concatenation of literals or template literals",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-useless-concat"
       },
       "name": "no-useless-concat",
@@ -5611,6 +5619,7 @@
       "docs": {
         "description": "Disallow `void` operators",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-void"
       },
       "name": "no-void",
@@ -5631,6 +5640,7 @@
       "docs": {
         "description": "Disallow specified warning terms in comments",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/no-warning-comments"
       },
       "name": "no-warning-comments",
@@ -5716,6 +5726,7 @@
       "docs": {
         "description": "Require or disallow method and property shorthand syntax for object literals",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/object-shorthand"
       },
       "fixable": "code",
@@ -5727,6 +5738,7 @@
       "docs": {
         "description": "Enforce variables to be declared either together or separately in functions",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/one-var"
       },
       "fixable": "code",
@@ -5754,6 +5766,7 @@
       "docs": {
         "description": "Require or disallow assignment operator shorthand where possible",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/operator-assignment"
       },
       "fixable": "code",
@@ -5810,6 +5823,7 @@
       "docs": {
         "description": "Require using arrow functions for callbacks",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-arrow-callback"
       },
       "fixable": "code",
@@ -5838,6 +5852,7 @@
       "docs": {
         "description": "Require destructuring from arrays and/or objects",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-destructuring"
       },
       "fixable": "code",
@@ -5849,6 +5864,7 @@
       "docs": {
         "description": "Disallow the use of `Math.pow` in favor of the `**` operator",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-exponentiation-operator"
       },
       "fixable": "code",
@@ -5871,6 +5887,7 @@
       "docs": {
         "description": "Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-numeric-literals"
       },
       "fixable": "code",
@@ -5893,6 +5910,7 @@
       "docs": {
         "description": "Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-object-spread"
       },
       "fixable": "code",
@@ -5958,6 +5976,7 @@
       "docs": {
         "description": "Require spread operators instead of `.apply()`",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-spread"
       },
       "fixable": null,
@@ -5969,6 +5988,7 @@
       "docs": {
         "description": "Require template literals instead of string concatenation",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/prefer-template"
       },
       "fixable": "code",
@@ -6132,8 +6152,9 @@
         }
       ],
       "docs": {
-        "description": "Enforce sorted import declarations within modules",
+        "description": "Enforce sorted `import` declarations within modules",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/sort-imports"
       },
       "fixable": "code",
@@ -6155,6 +6176,7 @@
       "docs": {
         "description": "Require object keys to be sorted",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/sort-keys"
       },
       "name": "sort-keys",
@@ -6170,6 +6192,7 @@
       "docs": {
         "description": "Require variables within the same declaration block to be sorted",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/sort-vars"
       },
       "fixable": "code",
@@ -6370,6 +6393,7 @@
       "docs": {
         "description": "Require `var` declarations be placed at the top of their containing scope",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/vars-on-top"
       },
       "name": "vars-on-top",
@@ -6426,6 +6450,7 @@
       "docs": {
         "description": "Require or disallow \"Yoda\" conditions",
         "recommended": false,
+        "frozen": true,
         "url": "https://eslint.org/docs/latest/rules/yoda"
       },
       "fixable": "code",
@@ -11393,94 +11418,6 @@
       "name": "sonarjs/no-async-constructor",
       "plugin": "sonarjs"
     },
-    "tailwindcss/classnames-order": {
-      "docs": {
-        "description": "Enforce a consistent and logical order of the Tailwind CSS classnames",
-        "category": "Stylistic Issues",
-        "recommended": false,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/classnames-order.md"
-      },
-      "fixable": "code",
-      "name": "tailwindcss/classnames-order",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/enforces-negative-arbitrary-values": {
-      "docs": {
-        "description": "Warns about dash prefixed classnames using arbitrary values",
-        "category": "Best Practices",
-        "recommended": true,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-negative-arbitrary-values.md"
-      },
-      "fixable": null,
-      "name": "tailwindcss/enforces-negative-arbitrary-values",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/enforces-shorthand": {
-      "docs": {
-        "description": "Enforces the usage of shorthand Tailwind CSS classnames",
-        "category": "Best Practices",
-        "recommended": true,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-shorthand.md"
-      },
-      "fixable": "code",
-      "name": "tailwindcss/enforces-shorthand",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/migration-from-tailwind-2": {
-      "docs": {
-        "description": "Detect obsolete classnames when upgrading to Tailwind CSS v3",
-        "category": "Possible Errors",
-        "recommended": true,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/migration-from-tailwind-2.md"
-      },
-      "fixable": "code",
-      "name": "tailwindcss/migration-from-tailwind-2",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/no-arbitrary-value": {
-      "docs": {
-        "description": "Forbid using arbitrary values in classnames",
-        "category": "Best Practices",
-        "recommended": false,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-arbitrary-value.md"
-      },
-      "fixable": null,
-      "name": "tailwindcss/no-arbitrary-value",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/no-contradicting-classname": {
-      "docs": {
-        "description": "Avoid contradicting Tailwind CSS classnames (e.g. \"w-3 w-5\")",
-        "category": "Possible Errors",
-        "recommended": true,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-contradicting-classname.md"
-      },
-      "fixable": null,
-      "name": "tailwindcss/no-contradicting-classname",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/no-custom-classname": {
-      "docs": {
-        "description": "Detect classnames which do not belong to Tailwind CSS",
-        "category": "Best Practices",
-        "recommended": false,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-custom-classname.md"
-      },
-      "fixable": null,
-      "name": "tailwindcss/no-custom-classname",
-      "plugin": "tailwindcss"
-    },
-    "tailwindcss/no-unnecessary-arbitrary-value": {
-      "docs": {
-        "description": "Forbid using arbitrary values in classnames when an equivalent preset exists",
-        "category": "Best Practices",
-        "recommended": true,
-        "url": "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-unnecessary-arbitrary-value.md"
-      },
-      "fixable": "code",
-      "name": "tailwindcss/no-unnecessary-arbitrary-value",
-      "plugin": "tailwindcss"
-    },
     "import/no-unresolved": {
       "type": "problem",
       "docs": {
@@ -15966,7 +15903,7 @@
       ],
       "configs": [
         2,
-        15
+        14
       ]
     },
     {
@@ -15975,8 +15912,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -15985,8 +15922,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -15995,8 +15932,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16005,8 +15942,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16015,8 +15952,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16025,8 +15962,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16035,8 +15972,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16045,8 +15982,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16055,8 +15992,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16065,8 +16002,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16075,8 +16012,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16085,8 +16022,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16095,8 +16032,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16105,8 +16042,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16115,8 +16052,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16125,8 +16062,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16135,8 +16072,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16145,8 +16082,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16155,8 +16092,8 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     },
     {
@@ -16165,13 +16102,13 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        14,
-        15
+        13,
+        14
       ]
     }
   ],
   "meta": {
-    "lastUpdate": 1737769559742,
+    "lastUpdate": 1738396435000,
     "basePath": "",
     "configPath": ""
   }
