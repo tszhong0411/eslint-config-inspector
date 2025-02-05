@@ -16057,16 +16057,6 @@
       ]
     },
     {
-      "filepath": "src/env.ts",
-      "globs": [
-        "**/*.?([cm])ts"
-      ],
-      "configs": [
-        13,
-        14
-      ]
-    },
-    {
       "filepath": "src/globs.ts",
       "globs": [
         "**/*.?([cm])ts"
@@ -16108,7 +16098,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1738396435000,
+    "lastUpdate": 1738756679671,
     "basePath": "",
     "configPath": ""
   }
