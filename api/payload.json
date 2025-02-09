@@ -60,7 +60,7 @@
         "**/build/",
         "**/dist/",
         "**/.eslint-config-inspector/",
-        "**/.mdx/",
+        "**/.content-collections",
         "**/playwright-report/",
         "**/test-results/",
         "**/coverage/",
@@ -2067,7 +2067,12 @@
         "wrap-regex": "off",
         "yield-star-spacing": "off",
         "react/jsx-space-before-closing": "off",
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ],
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off"
       },
@@ -16095,7 +16100,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1738773056931,
+    "lastUpdate": 1739080450921,
     "basePath": "",
     "configPath": ""
   }
