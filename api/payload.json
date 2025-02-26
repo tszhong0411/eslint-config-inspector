@@ -2168,7 +2168,14 @@
         ],
         "@typescript-eslint/triple-slash-reference": "error",
         "@typescript-eslint/unbound-method": "error",
-        "@typescript-eslint/no-confusing-void-expression": "error",
+        "@typescript-eslint/no-confusing-void-expression": [
+          "error",
+          {
+            "ignoreArrowShorthand": true,
+            "ignoreVoidOperator": true,
+            "ignoreVoidReturningFunctions": true
+          }
+        ],
         "@typescript-eslint/no-deprecated": "error",
         "@typescript-eslint/no-dynamic-delete": "error",
         "@typescript-eslint/no-extraneous-class": "error",
@@ -16100,7 +16107,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1740420270351,
+    "lastUpdate": 1740544839566,
     "basePath": "",
     "configPath": ""
   }
